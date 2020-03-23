@@ -2,13 +2,13 @@ package model;
 
 public class QModel {
 
-    private static Double D;
-    private static Double H;
-    private static Double S;
-    private static Double L;
-    private static Double C;
-    private static Double dayWorkInYear;
-    private static Double dayProduction;
+    private static Double D = null;
+    private static Double H = null;
+    private static Double S = null;
+    private static Double L = null;
+    private static Double C = null;
+    private static Double dayWorkInYear = null;
+    private static Double dayProduction = null;
 
     public static void staticInstance(Double D_, Double H_, Double S_, Double L_, Double C_,  Double dayWorkInYear_, Double dayProduction_) {
         D = (D_ == null)? Double.MAX_VALUE: new Double(D_);

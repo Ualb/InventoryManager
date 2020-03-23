@@ -1,15 +1,23 @@
+import model.PModel;
 import org.apache.commons.math3.distribution.NormalDistribution;
 
 public class Main {
 
     public static void main(String []data) {
-        NormalDistribution normalDistribution = new NormalDistribution();
-        double inverseCumulativeProbability = normalDistribution.inverseCumulativeProbability(0.95);
-        System.out.println(inverseCumulativeProbability);
-        System.out.println(busquedaBinaria(0.95));
+//        NormalDistribution normalDistribution = new NormalDistribution();
+//        double inverseCumulativeProbability = normalDistribution.inverseCumulativeProbability(0.95);
+//        System.out.println(inverseCumulativeProbability);
+//        System.out.println(busquedaBinaria(0.95));
+
+//        PModel.staticInstance(0.3, 0.2, null,  10.0, 90.0, null, null);
+//        System.out.println(PModel.getROP());
+//
+//        PModel.staticInstance(null, null, 0.95, 25.0, 90.0, 4.0, 15.0);
+//        System.out.println(PModel.getROP());
+
     }
 
-    public static double FuncionNormal(double x) {
+    /*public static double FuncionNormal(double x) {
         int neg = (x < 0d) ? 1 : 0;
         if (neg == 1)
             x *= -1d;
@@ -38,6 +46,6 @@ public class Main {
             }
         }
         return Double.MAX_VALUE;
-    }
+    }*/
 
 }
