@@ -20,13 +20,10 @@ public class QModel {
     private static Double L = null;
     private static Double i = null;
     private static Double C = null;
-    /**
-     * Dias de trabajo en el anio
-     */
+    // Dias de trabajo en el anio
+
     private static Double dayWorkInYear = null;
-    /**
-     * Produccion diaria
-     */
+    // Produccion diaria
     private static Double dayProduction = null;
 
     /**
