@@ -1,4 +1,4 @@
-package model;
+package controller;
 
 /**
  * QModel (Economic Order Quantity EOQ)

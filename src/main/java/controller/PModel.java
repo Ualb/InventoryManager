@@ -1,4 +1,4 @@
-package model;
+package controller;
 
 import org.apache.commons.math3.distribution.NormalDistribution;
 

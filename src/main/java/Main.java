@@ -1,5 +1,5 @@
-import model.PModel;
-import model.QModel;
+import controller.PModel;
+import controller.QModel;
 
 public class Main {
 
