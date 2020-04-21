@@ -1,7 +1,5 @@
 package Entity;
 
-import java.util.Objects;
-
 public class Product {
 
     private int idProduct;

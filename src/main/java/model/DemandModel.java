@@ -35,7 +35,7 @@ public class DemandModel {
 
     }
 
-    public static void udeleteDemand(int idDemand) {
+    public static void deleteDemand(int idDemand) {
 
     }
 }
