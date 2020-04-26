@@ -1,5 +1,10 @@
+import controller.MRP;
 import controller.PModel;
 import controller.QModel;
+import controller.RowExplosionMainTable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -19,6 +24,22 @@ public class Main {
         System.out.println(QModel.getLevelAvarage());
         System.out.println(QModel.getLevelMax());
         System.out.println(QModel.getCostInYear());
+
+        //mrp test, tamanio del lote l4l
+        List<RowExplosionMainTable> list = new ArrayList<RowExplosionMainTable>();
+        list.add(new RowExplosionMainTable(1, 50, 47.0));
+        list.add(new RowExplosionMainTable(2, 60, 47.0));
+        list.add(new RowExplosionMainTable(3, 70, 47.0));
+        list.add(new RowExplosionMainTable(4, 60, 47.0));
+        list.add(new RowExplosionMainTable(5, 95, 47.0));
+        list.add(new RowExplosionMainTable(6, 75, 47.0));
+        list.add(new RowExplosionMainTable(7, 60, 47.0));
+        list.add(new RowExplosionMainTable(8, 95, 47.0));
+
+        list = MRP.getL4L(list);
+        for(RowExplosionMainTable row: list) {
+            System.out.println(row);
+        }
 
     }
 }
