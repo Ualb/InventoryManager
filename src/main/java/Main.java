@@ -27,14 +27,14 @@ public class Main {
 
         //mrp test, tamanio del lote l4l
         List<RowExplosionMainTable> list = new ArrayList<RowExplosionMainTable>();
-        list.add(new RowExplosionMainTable(1, 50, 47.0));
-        list.add(new RowExplosionMainTable(2, 60, 47.0));
-        list.add(new RowExplosionMainTable(3, 70, 47.0));
-        list.add(new RowExplosionMainTable(4, 60, 47.0));
-        list.add(new RowExplosionMainTable(5, 95, 47.0));
-        list.add(new RowExplosionMainTable(6, 75, 47.0));
-        list.add(new RowExplosionMainTable(7, 60, 47.0));
-        list.add(new RowExplosionMainTable(8, 95, 47.0));
+        list.add(new RowExplosionMainTable(1, 50, 47.0, false));
+        list.add(new RowExplosionMainTable(2, 60, 47.0, false));
+        list.add(new RowExplosionMainTable(3, 70, 47.0, false));
+        list.add(new RowExplosionMainTable(4, 60, 47.0, false));
+        list.add(new RowExplosionMainTable(5, 95, 47.0, false));
+        list.add(new RowExplosionMainTable(6, 75, 47.0, false));
+        list.add(new RowExplosionMainTable(7, 60, 47.0, false));
+        list.add(new RowExplosionMainTable(8, 95, 47.0, false));
 
         list = MRP.getL4L(list);
         for(RowExplosionMainTable row: list) {

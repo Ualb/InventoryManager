@@ -17,6 +17,7 @@ public class MRP {
     }
 
     public static List<RowExplosionMainTable> getEOQ(List<RowExplosionMainTable> list) {
+        Double D = list.stream().filter(sum -> sum.getDemand() > 0).mapToDouble(sum -> sum.getDemand()).sum();
         return null;
     }
 

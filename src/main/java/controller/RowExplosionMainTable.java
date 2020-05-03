@@ -10,21 +10,24 @@ public class RowExplosionMainTable {
     private Double H;
     private Double S;
     private Double CT;
+    private Boolean isWeek = true; //false = es mes
 
     public RowExplosionMainTable() {}
 
-    public RowExplosionMainTable(Integer weekOrMonth, Integer demand, Double s) {
+    public RowExplosionMainTable(Integer weekOrMonth, Integer demand, Double s, Boolean isWeek) {
         this.weekOrMonth = weekOrMonth;
         this.demand = demand;
         S = s;
+        this.isWeek = isWeek;
     }
 
-    public RowExplosionMainTable(Double productCost, Integer weekOrMonth, Integer demand, Double h, Double s) {
+    public RowExplosionMainTable(Double productCost, Integer weekOrMonth, Integer demand, Double h, Double s, Boolean isWeek) {
         this.productCost = productCost;
         this.weekOrMonth = weekOrMonth;
         this.demand = demand;
         H = h;
         S = s;
+        this.isWeek = isWeek;
     }
 
     public Double getProductCost() {
@@ -91,6 +94,14 @@ public class RowExplosionMainTable {
         this.CT = CT;
     }
 
+    public Boolean getWeek() {
+        return isWeek;
+    }
+
+    public void setWeek(Boolean week) {
+        isWeek = week;
+    }
+
     @Override
     public String toString() {
         return "ExplosionTable{" +
@@ -102,6 +113,7 @@ public class RowExplosionMainTable {
                 ", H=" + H +
                 ", S=" + S +
                 ", CT=" + CT +
+                ",isWeek=" + isWeek +
                 '}';
     }
 
@@ -117,6 +129,7 @@ public class RowExplosionMainTable {
                 endInventory.equals(that.endInventory) &&
                 H.equals(that.H) &&
                 S.equals(that.S) &&
-                CT.equals(that.CT);
+                CT.equals(that.CT) &&
+                isWeek.equals(that.isWeek);
     }
 }
