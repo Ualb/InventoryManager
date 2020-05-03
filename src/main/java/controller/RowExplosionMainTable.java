@@ -21,6 +21,15 @@ public class RowExplosionMainTable {
         this.isWeek = isWeek;
     }
 
+    public RowExplosionMainTable(Integer weekOrMonth, Integer demand, Double s, Boolean isWeek, Double h) {
+        this.weekOrMonth = weekOrMonth;
+        this.demand = demand;
+        S = s;
+        this.isWeek = isWeek;
+        H = h;
+        this.production = 0;
+    }
+
     public RowExplosionMainTable(Double productCost, Integer weekOrMonth, Integer demand, Double h, Double s, Boolean isWeek) {
         this.productCost = productCost;
         this.weekOrMonth = weekOrMonth;
@@ -94,12 +103,8 @@ public class RowExplosionMainTable {
         this.CT = CT;
     }
 
-    public Boolean getWeek() {
+    public Boolean isWeek() {
         return isWeek;
-    }
-
-    public void setWeek(Boolean week) {
-        isWeek = week;
     }
 
     @Override

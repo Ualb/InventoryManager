@@ -4,6 +4,7 @@ import controller.QModel;
 import controller.RowExplosionMainTable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -26,20 +27,36 @@ public class Main {
         System.out.println(QModel.getCostInYear());
 
         //mrp test, tamanio del lote l4l
-        List<RowExplosionMainTable> list = new ArrayList<RowExplosionMainTable>();
-        list.add(new RowExplosionMainTable(1, 50, 47.0, false));
-        list.add(new RowExplosionMainTable(2, 60, 47.0, false));
-        list.add(new RowExplosionMainTable(3, 70, 47.0, false));
-        list.add(new RowExplosionMainTable(4, 60, 47.0, false));
-        list.add(new RowExplosionMainTable(5, 95, 47.0, false));
-        list.add(new RowExplosionMainTable(6, 75, 47.0, false));
-        list.add(new RowExplosionMainTable(7, 60, 47.0, false));
-        list.add(new RowExplosionMainTable(8, 95, 47.0, false));
+        List<RowExplosionMainTable> list = Arrays.asList(
+                new RowExplosionMainTable(1, 50, 47.0, false),
+                new RowExplosionMainTable(2, 60, 47.0, false),
+                new RowExplosionMainTable(3, 70, 47.0, false),
+                new RowExplosionMainTable(4, 60, 47.0, false),
+                new RowExplosionMainTable(5, 95, 47.0, false),
+                new RowExplosionMainTable(6, 75, 47.0, false),
+                new RowExplosionMainTable(7, 60, 47.0, false),
+                new RowExplosionMainTable(8, 55, 47.0, false));
 
         list = MRP.getL4L(list);
         for(RowExplosionMainTable row: list) {
             System.out.println(row);
         }
 
+        list = Arrays.asList(
+                new RowExplosionMainTable(1, 50, 47.0, true, 0.05),
+                new RowExplosionMainTable(2, 60, 47.0, true, 0.05),
+                new RowExplosionMainTable(3, 70, 47.0, true, 0.05),
+                new RowExplosionMainTable(4, 60, 47.0, true, 0.05),
+                new RowExplosionMainTable(5, 95, 47.0, true, 0.05),
+                new RowExplosionMainTable(6, 75, 47.0, true, 0.05),
+                new RowExplosionMainTable(7, 60, 47.0, true, 0.05),
+                new RowExplosionMainTable(8, 55, 47.0, true, 0.05));
+
+        System.out.println("--------------------------------");
+
+        list = MRP.getEOQ(list);
+        for(RowExplosionMainTable row: list) {
+            System.out.println(row);
+        }
     }
 }
