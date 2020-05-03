@@ -24,6 +24,10 @@ public class MRP {
     }
 
     public static List<RowExplosionMainTable> getEOQ(List<RowExplosionMainTable> list) {
+        return getEOQ(list, null);
+    }
+
+    public static List<RowExplosionMainTable> getEOQ(List<RowExplosionMainTable> list, Integer EOQ) {
         Double sumOfDemand = list.stream().
                 mapToDouble(sum -> sum.getDemand()).
                 sum();
@@ -31,7 +35,8 @@ public class MRP {
                 TOTAL_WEEKS_IN_YEAR: TOTAL_MONTHS_IN_YEAR;
         Double D = sumOfDemand / list.size() * time;
         Double H = list.get(POSITION_ZERO).getH();
-        Integer EOQ = (int) Math.floor(Math.sqrt((2 * D * list.get(POSITION_ZERO).getS()) /
+        if (EOQ == null)
+            EOQ = (int) Math.floor(Math.sqrt((2 * D * list.get(POSITION_ZERO).getS()) /
                 (H * time)));
         Integer endInventory = new Integer(ZERO_VALOR);
         Double cstTotal = ZERO_COST;
@@ -60,7 +65,42 @@ public class MRP {
     }
 
     public static ExplosionTable getLTC(List<RowExplosionMainTable> list, List<RowExplosionAuxiliarTable> auxList) {
-        return null;
+        Integer sumOfLots = ZERO_VALOR;
+        Double sumOfH = ZERO_COST;
+        Double H = list.get(POSITION_ZERO).getH();
+        for (int index = 0; index < auxList.size(); ++index) {
+            auxList.get(index).setLot(list.get(index).getDemand() + sumOfLots);
+            auxList.get(index).setH(H * list.get(index).getDemand() * index + sumOfH);
+            auxList.get(index).setS(list.get(index).getS());
+            auxList.get(index).setCT(auxList.get(index).getH() + auxList.get(index).getS());
+            sumOfLots = auxList.get(index).getLot();
+            sumOfH = auxList.get(index).getH();
+        }
+        final Integer minorIndex;
+        Integer minorIndexBotton = POSITION_ZERO;
+        Integer minorIndexUp = POSITION_ZERO;
+        Double minorDiferenceBotton = ZERO_COST;
+        Double minorDiferenceUp = ZERO_COST;
+        for (int index = 0; index < auxList.size(); ++index) {
+            if (auxList.get(index).getH() < auxList.get(index).getS()) {
+                minorIndexBotton = index;
+                minorDiferenceBotton = auxList.get(index).getS() - auxList.get(index).getH();
+            } else {
+                minorIndexUp = index;
+                minorDiferenceUp = auxList.get(index).getH() - auxList.get(index).getS();
+                break;
+            }
+        }
+        if (minorDiferenceBotton < minorDiferenceUp) {
+            minorIndex = minorIndexBotton;
+        } else {
+            minorIndex = minorIndexUp;
+        }
+        list = getEOQ(list, list.stream().
+                filter(index -> index.getWeekOrMonth() <= minorIndex + 1).
+                mapToInt(sum -> sum.getDemand()).
+                sum());
+        return new ExplosionTable(auxList, list);
     }
 
     public static ExplosionTable getLUC(List<RowExplosionMainTable> list, List<RowExplosionAuxiliarTable> auxList) {
