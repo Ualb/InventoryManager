@@ -10,6 +10,10 @@ public class MRP {
     private static final int TOTAL_WEEKS_IN_YEAR = 52;
     private static final int TOTAL_MONTHS_IN_YEAR = 12;
     private static final int FIRTS_WEEK_OR_MONTH = 1;
+    private enum TypeMethod {
+        LTC,
+        LUC
+    }
 
     public static List<RowExplosionMainTable> getL4L(List<RowExplosionMainTable> list) {
         Double sum = new Double(ZERO_VALOR);
@@ -65,6 +69,24 @@ public class MRP {
     }
 
     public static ExplosionTable getLTC(List<RowExplosionMainTable> list, List<RowExplosionAuxiliarTable> auxList) {
+        final Integer mayorIndex = indexSelected(list, auxList, TypeMethod.LTC);
+        list = getEOQ(list, list.stream().
+                filter(index -> index.getWeekOrMonth() <= mayorIndex + 1).
+                mapToInt(sum -> sum.getDemand()).
+                sum());
+        return new ExplosionTable(auxList, list);
+    }
+
+    public static ExplosionTable getLUC(List<RowExplosionMainTable> list, List<RowExplosionAuxiliarTable> auxList) {
+        final Integer minorIndex = indexSelected(list, auxList, TypeMethod.LUC);
+        list = getEOQ(list, list.stream().
+                filter(index -> index.getWeekOrMonth() <= minorIndex + 1).
+                mapToInt(sum -> sum.getDemand()).
+                sum());
+        return new ExplosionTable(auxList, list);
+    }
+
+    private static int indexSelected (List<RowExplosionMainTable> list, List<RowExplosionAuxiliarTable> auxList, TypeMethod typeMethod) {
         Integer sumOfLots = ZERO_VALOR;
         Double sumOfH = ZERO_COST;
         Double H = list.get(POSITION_ZERO).getH();
@@ -76,36 +98,37 @@ public class MRP {
             sumOfLots = auxList.get(index).getLot();
             sumOfH = auxList.get(index).getH();
         }
-        final Integer minorIndex;
-        Integer minorIndexBotton = POSITION_ZERO;
-        Integer minorIndexUp = POSITION_ZERO;
-        Double minorDiferenceBotton = ZERO_COST;
-        Double minorDiferenceUp = ZERO_COST;
-        for (int index = 0; index < auxList.size(); ++index) {
-            if (auxList.get(index).getH() < auxList.get(index).getS()) {
-                minorIndexBotton = index;
-                minorDiferenceBotton = auxList.get(index).getS() - auxList.get(index).getH();
-            } else {
-                minorIndexUp = index;
-                minorDiferenceUp = auxList.get(index).getH() - auxList.get(index).getS();
-                break;
+        if (typeMethod == TypeMethod.LTC) {
+            final Integer mayorIndex;
+            Integer minorIndexBotton = POSITION_ZERO;
+            Integer minorIndexUp = POSITION_ZERO;
+            Double minorDiferenceBotton = ZERO_COST;
+            Double minorDiferenceUp = ZERO_COST;
+            for (int index = 0; index < auxList.size(); ++index) {
+                if (auxList.get(index).getH() < auxList.get(index).getS()) {
+                    minorIndexBotton = index;
+                    minorDiferenceBotton = auxList.get(index).getS() - auxList.get(index).getH();
+                } else {
+                    minorIndexUp = index;
+                    minorDiferenceUp = auxList.get(index).getH() - auxList.get(index).getS();
+                    break;
+                }
             }
+            if (minorDiferenceBotton < minorDiferenceUp) {
+                mayorIndex = minorIndexBotton;
+            } else {
+                mayorIndex = minorIndexUp;
+            }
+            return mayorIndex;
         }
-        if (minorDiferenceBotton < minorDiferenceUp) {
-            minorIndex = minorIndexBotton;
-        } else {
-            minorIndex = minorIndexUp;
-        }
-        list = getEOQ(list, list.stream().
-                filter(index -> index.getWeekOrMonth() <= minorIndex + 1).
-                mapToInt(sum -> sum.getDemand()).
-                sum());
-        return new ExplosionTable(auxList, list);
-    }
-
-    public static ExplosionTable getLUC(List<RowExplosionMainTable> list, List<RowExplosionAuxiliarTable> auxList) {
-        return null;
+        // LUC Metodo
+        Integer minorIndex = ZERO_VALOR;
+        Double minorCst = Double.MAX_VALUE;
+        for (int index = 0; index < auxList.size(); ++index)
+            if (minorCst > auxList.get(index).getCT() / auxList.get(index).getLot()) {
+                minorIndex = index;
+                minorCst = auxList.get(index).getCT() / auxList.get(index).getLot();
+            }
+        return minorIndex;
     }
 }
-
-
