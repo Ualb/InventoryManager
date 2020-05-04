@@ -1,5 +1,9 @@
 package controller;
 
+import model.ExplosionTable;
+import model.RowExplosionAuxiliarTable;
+import model.RowExplosionMainTable;
+
 import java.util.List;
 
 public class MRP {
@@ -132,3 +136,4 @@ public class MRP {
         return minorIndex;
     }
 }
+

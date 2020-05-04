@@ -1,4 +1,7 @@
 import controller.*;
+import model.ExplosionTable;
+import model.RowExplosionAuxiliarTable;
+import model.RowExplosionMainTable;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,7 @@
-package controller;
+package model;
+
+import model.RowExplosionAuxiliarTable;
+import model.RowExplosionMainTable;
 
 import java.util.List;
 
