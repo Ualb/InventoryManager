@@ -1,9 +1,12 @@
 package controller;
 
+import model.PlainToAgreggregatePlanning;
+
 public class AggregatePlanning {
 
-    public static void getPersuitnStrategy () {
+    public static PlainToAgreggregatePlanning getPersuitnStrategy (PlainToAgreggregatePlanning plain) {
 
+        return null;
     }
 
     public static void getLevelForceWithOvertime () {
