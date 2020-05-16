@@ -1,6 +1,6 @@
 package model;
 
-public class MonthToAggregatePlanning {
+public class MonthAggregatePlanning {
 
     private int number; //el numero del mes
     private int demand;
@@ -22,10 +22,10 @@ public class MonthToAggregatePlanning {
     private double cstH;
     private double cstTotal;
 
-    public MonthToAggregatePlanning() {
+    public MonthAggregatePlanning() {
     }
 
-    public MonthToAggregatePlanning(int number, int demand, int daysAvaileble) {
+    public MonthAggregatePlanning(int number, int demand, int daysAvaileble) {
         this.number = number;
         this.demand = demand;
         this.daysAvaileble = daysAvaileble;
@@ -216,7 +216,7 @@ public class MonthToAggregatePlanning {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MonthToAggregatePlanning that = (MonthToAggregatePlanning) o;
+        MonthAggregatePlanning that = (MonthAggregatePlanning) o;
         return number == that.number &&
                 demand == that.demand &&
                 daysAvaileble == that.daysAvaileble &&

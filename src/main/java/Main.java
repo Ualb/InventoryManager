@@ -126,42 +126,42 @@ public class Main {
 
         System.out.println("--------------------------------");
 
-        List<MonthToAggregatePlanning> list2 = Arrays.asList(
-                new MonthToAggregatePlanning(1,1800, 22),
-                new MonthToAggregatePlanning(2,1500, 19),
-                new MonthToAggregatePlanning(3,1100, 21),
-                new MonthToAggregatePlanning(4,900, 21),
-                new MonthToAggregatePlanning(5,1100, 22),
-                new MonthToAggregatePlanning(6,1600, 20)
+        List<MonthAggregatePlanning> list2 = Arrays.asList(
+                new MonthAggregatePlanning(1,1800, 22),
+                new MonthAggregatePlanning(2,1500, 19),
+                new MonthAggregatePlanning(3,1100, 21),
+                new MonthAggregatePlanning(4,900, 21),
+                new MonthAggregatePlanning(5,1100, 22),
+                new MonthAggregatePlanning(6,1600, 20)
         );
 
-        PlainToAgreggregatePlanning plain =
-                new PlainToAgreggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list2,0);
+        PlainAggregatePlanning plain =
+                new PlainAggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list2,0);
 
         plain = AggregatePlanning.getPersuitStrategy(plain);
 
-        for (MonthToAggregatePlanning month: plain.getList()) {
+        for (MonthAggregatePlanning month: plain.getList()) {
             System.out.println(month);
         }
 
         System.out.println("--------------------------------");
 
-        List<MonthToAggregatePlanning> list3 = Arrays.asList(
-                new MonthToAggregatePlanning(1,1800, 22),
-                new MonthToAggregatePlanning(2,1500, 19),
-                new MonthToAggregatePlanning(3,1100, 21),
-                new MonthToAggregatePlanning(4,900, 21),
-                new MonthToAggregatePlanning(5,1100, 22),
-                new MonthToAggregatePlanning(6,1600, 20)
+        List<MonthAggregatePlanning> list3 = Arrays.asList(
+                new MonthAggregatePlanning(1,1800, 22),
+                new MonthAggregatePlanning(2,1500, 19),
+                new MonthAggregatePlanning(3,1100, 21),
+                new MonthAggregatePlanning(4,900, 21),
+                new MonthAggregatePlanning(5,1100, 22),
+                new MonthAggregatePlanning(6,1600, 20)
         );
 
-        PlainToAgreggregatePlanning plain2 =
-                new PlainToAgreggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list3,0);
+        PlainAggregatePlanning plain2 =
+                new PlainAggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list3,0);
 
 
         plain2 = AggregatePlanning.getLevelForceWithOvertime(plain2);
 
-        for (MonthToAggregatePlanning month: plain2.getList()) {
+        for (MonthAggregatePlanning month: plain2.getList()) {
             System.out.println(month);
         }
     }

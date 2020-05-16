@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 
-public class PlainToAgreggregatePlanning {
+public class PlainAggregatePlanning {
 
     private double productCst; //costo del producto
     private double H; //mantenimiento
@@ -18,15 +18,15 @@ public class PlainToAgreggregatePlanning {
     private double outsourcing;
     private int MOI; //mano de obra inicial
     private double cstTotal;
-    private List<MonthToAggregatePlanning> list;
+    private List<MonthAggregatePlanning> list;
     private int forceLeven;
 
     public final int HOURS_PER_DAY = 8;
 
-    public PlainToAgreggregatePlanning() {
+    public PlainAggregatePlanning() {
     }
 
-    public PlainToAgreggregatePlanning(double productCst, double h, double cf, double recruitment, double dismissal, double normalTime, double extraTime, int startInventory, double requeredTime, double stockSecurityPorcentual, int stockSecurity, double outsourcing, int MOI, List<MonthToAggregatePlanning> list, int forceLeven) {
+    public PlainAggregatePlanning(double productCst, double h, double cf, double recruitment, double dismissal, double normalTime, double extraTime, int startInventory, double requeredTime, double stockSecurityPorcentual, int stockSecurity, double outsourcing, int MOI, List<MonthAggregatePlanning> list, int forceLeven) {
         this.productCst = productCst;
         H = h;
         Cf = cf;
@@ -148,11 +148,11 @@ public class PlainToAgreggregatePlanning {
         this.MOI = MOI;
     }
 
-    public List<MonthToAggregatePlanning> getList() {
+    public List<MonthAggregatePlanning> getList() {
         return list;
     }
 
-    public void setList(List<MonthToAggregatePlanning> list) {
+    public void setList(List<MonthAggregatePlanning> list) {
         this.list = list;
     }
 
@@ -195,7 +195,7 @@ public class PlainToAgreggregatePlanning {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PlainToAgreggregatePlanning that = (PlainToAgreggregatePlanning) o;
+        PlainAggregatePlanning that = (PlainAggregatePlanning) o;
         return Double.compare(that.productCst, productCst) == 0 &&
                 Double.compare(that.H, H) == 0 &&
                 Double.compare(that.Cf, Cf) == 0 &&

@@ -1,16 +1,16 @@
 package controller;
 
-import model.MonthToAggregatePlanning;
-import model.PlainToAgreggregatePlanning;
+import model.MonthAggregatePlanning;
+import model.PlainAggregatePlanning;
 
 public class AggregatePlanning {
 
-    public static PlainToAgreggregatePlanning getPersuitStrategy (PlainToAgreggregatePlanning plain) {
+    public static PlainAggregatePlanning getPersuitStrategy (PlainAggregatePlanning plain) {
         int endInventory = 0;
         int employeesAfter = 0;
         int employeeBefore = 0;
         double cstTotal = 0.0;
-        for (MonthToAggregatePlanning month: plain.getList()) {
+        for (MonthAggregatePlanning month: plain.getList()) {
             if (endInventory != 0) month.setStartInventory(endInventory);
             else month.setStartInventory(plain.getStartInventory());
             if ((plain.getStockSecurityPorcentual() > 0))
@@ -45,7 +45,7 @@ public class AggregatePlanning {
         return plain;
     }
 
-    public static PlainToAgreggregatePlanning getLevelForceWithOvertime (PlainToAgreggregatePlanning plain) {
+    public static PlainAggregatePlanning getLevelForceWithOvertime (PlainAggregatePlanning plain) {
         int endInventory = 0;
         boolean isFirst = true;
         double cstTotal = 0.0;
@@ -54,7 +54,7 @@ public class AggregatePlanning {
                     (int) ((plain.getRequeredTime() / plain.HOURS_PER_DAY) *
                             (plain.getList().stream().mapToDouble(b -> b.getDemand()).sum() /
                                     plain.getList().stream().mapToDouble(b -> b.getDaysAvaileble()).sum())));
-        for (MonthToAggregatePlanning month: plain.getList()) {
+        for (MonthAggregatePlanning month: plain.getList()) {
             month.setHoursAvaileble(plain.HOURS_PER_DAY * month.getDaysAvaileble() * plain.getForceLeven());
             month.setRealProduction((int) Math.round(month.getHoursAvaileble() / plain.getRequeredTime()));
             if (endInventory > 0) month.setStartInventory(endInventory);
