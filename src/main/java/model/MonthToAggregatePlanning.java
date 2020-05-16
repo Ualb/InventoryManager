@@ -5,24 +5,27 @@ public class MonthToAggregatePlanning {
     private int number; //el numero del mes
     private int demand;
     private int daysAvaileble;
+    private int hoursAvaileble; //horas disponibles
     private int productionRequered;
     private int realProduction;
     private int startInventory;
     private int endInventory;
-    private int hoursRequered;
+    private int stockSecurity;
+    private double hoursRequered;
     private int numberOfEmployeesRequered;
     private double cstMissing; //faltante
     private double cstRecruitment; //contratacion
     private double cstDismissal; //despido
     private double cstOutsourcing;
     private double cstNormal;
+    private double cstMaterials;
     private double cstH;
     private double cstTotal;
 
     public MonthToAggregatePlanning() {
     }
 
-    public MonthToAggregatePlanning(int number, int demand, int daysAvaileble, int productionRequered, int realProduction, int startInventory, int endInventory, int hoursRequered, int numberOfEmployeesRequered, double cstMissing, double cstRecruitment, double cstDismissal, double cstOutsourcing, double cstNormal, double cstH, double cstTotal) {
+    public MonthToAggregatePlanning(int number, int demand, int daysAvaileble, int productionRequered, int realProduction, int startInventory, int endInventory, int stockSecurity, int hoursRequered, int numberOfEmployeesRequered, double cstMissing, double cstRecruitment, double cstDismissal, double cstOutsourcing, double cstNormal, double cstMaterials, double cstH, double cstTotal) {
         this.number = number;
         this.demand = demand;
         this.daysAvaileble = daysAvaileble;
@@ -30,6 +33,7 @@ public class MonthToAggregatePlanning {
         this.realProduction = realProduction;
         this.startInventory = startInventory;
         this.endInventory = endInventory;
+        this.stockSecurity = stockSecurity;
         this.hoursRequered = hoursRequered;
         this.numberOfEmployeesRequered = numberOfEmployeesRequered;
         this.cstMissing = cstMissing;
@@ -37,6 +41,7 @@ public class MonthToAggregatePlanning {
         this.cstDismissal = cstDismissal;
         this.cstOutsourcing = cstOutsourcing;
         this.cstNormal = cstNormal;
+        this.cstMaterials =cstMaterials;
         this.cstH = cstH;
         this.cstTotal = cstTotal;
     }
@@ -97,7 +102,15 @@ public class MonthToAggregatePlanning {
         this.endInventory = endInventory;
     }
 
-    public int getHoursRequered() {
+    public int getStockSecurity() {
+        return stockSecurity;
+    }
+
+    public void setStockSecurity(int stockSecurity) {
+        this.stockSecurity = stockSecurity;
+    }
+
+    public double getHoursRequered() {
         return hoursRequered;
     }
 
@@ -153,6 +166,14 @@ public class MonthToAggregatePlanning {
         this.cstNormal = cstNormal;
     }
 
+    public double getCstMaterials() {
+        return cstMaterials;
+    }
+
+    public void setCstMaterials(double cstMaterials) {
+        this.cstMaterials = cstMaterials;
+    }
+
     public double getCstH() {
         return cstH;
     }
@@ -167,6 +188,19 @@ public class MonthToAggregatePlanning {
 
     public void setCstTotal(double cstTotal) {
         this.cstTotal = cstTotal;
+    }
+
+    public int getHoursAvaileble() {
+        return hoursAvaileble;
+    }
+
+    public void setHoursAvaileble(int hoursAvaileble) {
+        this.hoursAvaileble = hoursAvaileble;
+    }
+
+
+    public void setHoursRequered(double hoursRequered) {
+        this.hoursRequered = hoursRequered;
     }
 
     @Override

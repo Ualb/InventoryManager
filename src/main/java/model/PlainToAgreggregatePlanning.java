@@ -17,7 +17,10 @@ public class PlainToAgreggregatePlanning {
     private int stockSecurity;
     private double outsourcing;
     private int MOI; //mano de obra inicial
+    private double cstTotal;
     private List<MonthToAggregatePlanning> list;
+
+    public final int HOURS_PER_DAY = 8;
 
     public PlainToAgreggregatePlanning() {
     }
@@ -149,6 +152,14 @@ public class PlainToAgreggregatePlanning {
 
     public void setList(List<MonthToAggregatePlanning> list) {
         this.list = list;
+    }
+
+    public double getCstTotal() {
+        return cstTotal;
+    }
+
+    public void setCstTotal(double cstTotal) {
+        this.cstTotal = cstTotal;
     }
 
     @Override

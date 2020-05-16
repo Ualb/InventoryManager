@@ -118,11 +118,8 @@ public class MRP {
                     break;
                 }
             }
-            if (minorDiferenceBotton < minorDiferenceUp) {
-                mayorIndex = minorIndexBotton;
-            } else {
-                mayorIndex = minorIndexUp;
-            }
+            if (minorDiferenceBotton < minorDiferenceUp) mayorIndex = minorIndexBotton;
+            else mayorIndex = minorIndexUp;
             return mayorIndex;
         }
         // LUC Metodo
