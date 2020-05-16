@@ -1,7 +1,5 @@
 import controller.*;
-import model.ExplosionTable;
-import model.RowExplosionAuxiliarTable;
-import model.RowExplosionMainTable;
+import model.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -124,6 +122,47 @@ public class Main {
         }
         for (RowExplosionMainTable row: list) {
             System.out.println(row);
+        }
+
+        System.out.println("--------------------------------");
+
+        List<MonthToAggregatePlanning> list2 = Arrays.asList(
+                new MonthToAggregatePlanning(1,1800, 22),
+                new MonthToAggregatePlanning(2,1500, 19),
+                new MonthToAggregatePlanning(3,1100, 21),
+                new MonthToAggregatePlanning(4,900, 21),
+                new MonthToAggregatePlanning(5,1100, 22),
+                new MonthToAggregatePlanning(6,1600, 20)
+        );
+
+        PlainToAgreggregatePlanning plain =
+                new PlainToAgreggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list2,0);
+
+        plain = AggregatePlanning.getPersuitStrategy(plain);
+
+        for (MonthToAggregatePlanning month: plain.getList()) {
+            System.out.println(month);
+        }
+
+        System.out.println("--------------------------------");
+
+        List<MonthToAggregatePlanning> list3 = Arrays.asList(
+                new MonthToAggregatePlanning(1,1800, 22),
+                new MonthToAggregatePlanning(2,1500, 19),
+                new MonthToAggregatePlanning(3,1100, 21),
+                new MonthToAggregatePlanning(4,900, 21),
+                new MonthToAggregatePlanning(5,1100, 22),
+                new MonthToAggregatePlanning(6,1600, 20)
+        );
+
+        PlainToAgreggregatePlanning plain2 =
+                new PlainToAgreggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list3,0);
+
+
+        plain2 = AggregatePlanning.getLevelForceWithOvertime(plain2);
+
+        for (MonthToAggregatePlanning month: plain2.getList()) {
+            System.out.println(month);
         }
     }
 }

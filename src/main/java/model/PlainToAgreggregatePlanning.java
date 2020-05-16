@@ -19,13 +19,14 @@ public class PlainToAgreggregatePlanning {
     private int MOI; //mano de obra inicial
     private double cstTotal;
     private List<MonthToAggregatePlanning> list;
+    private int forceLeven;
 
     public final int HOURS_PER_DAY = 8;
 
     public PlainToAgreggregatePlanning() {
     }
 
-    public PlainToAgreggregatePlanning(double productCst, double h, double cf, double recruitment, double dismissal, double normalTime, double extraTime, int startInventory, double requeredTime, double stockSecurityPorcentual, int stockSecurity, double outsourcing, int MOI, List<MonthToAggregatePlanning> list) {
+    public PlainToAgreggregatePlanning(double productCst, double h, double cf, double recruitment, double dismissal, double normalTime, double extraTime, int startInventory, double requeredTime, double stockSecurityPorcentual, int stockSecurity, double outsourcing, int MOI, List<MonthToAggregatePlanning> list, int forceLeven) {
         this.productCst = productCst;
         H = h;
         Cf = cf;
@@ -40,6 +41,7 @@ public class PlainToAgreggregatePlanning {
         this.outsourcing = outsourcing;
         this.MOI = MOI;
         this.list = list;
+        this.forceLeven = forceLeven;
     }
 
     public double getProductCst() {
@@ -160,6 +162,14 @@ public class PlainToAgreggregatePlanning {
 
     public void setCstTotal(double cstTotal) {
         this.cstTotal = cstTotal;
+    }
+
+    public int getForceLeven() {
+        return forceLeven;
+    }
+
+    public void setForceLeven(int forceLeven) {
+        this.forceLeven = forceLeven;
     }
 
     @Override

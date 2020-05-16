@@ -25,25 +25,10 @@ public class MonthToAggregatePlanning {
     public MonthToAggregatePlanning() {
     }
 
-    public MonthToAggregatePlanning(int number, int demand, int daysAvaileble, int productionRequered, int realProduction, int startInventory, int endInventory, int stockSecurity, int hoursRequered, int numberOfEmployeesRequered, double cstMissing, double cstRecruitment, double cstDismissal, double cstOutsourcing, double cstNormal, double cstMaterials, double cstH, double cstTotal) {
+    public MonthToAggregatePlanning(int number, int demand, int daysAvaileble) {
         this.number = number;
         this.demand = demand;
         this.daysAvaileble = daysAvaileble;
-        this.productionRequered = productionRequered;
-        this.realProduction = realProduction;
-        this.startInventory = startInventory;
-        this.endInventory = endInventory;
-        this.stockSecurity = stockSecurity;
-        this.hoursRequered = hoursRequered;
-        this.numberOfEmployeesRequered = numberOfEmployeesRequered;
-        this.cstMissing = cstMissing;
-        this.cstRecruitment = cstRecruitment;
-        this.cstDismissal = cstDismissal;
-        this.cstOutsourcing = cstOutsourcing;
-        this.cstNormal = cstNormal;
-        this.cstMaterials =cstMaterials;
-        this.cstH = cstH;
-        this.cstTotal = cstTotal;
     }
 
     public int getNumber() {
@@ -214,6 +199,7 @@ public class MonthToAggregatePlanning {
                 ", startInventory=" + startInventory +
                 ", endInventory=" + endInventory +
                 ", hoursRequered=" + hoursRequered +
+                ", hourAvaileble=" + hoursAvaileble +
                 ", numberOfEmployeesRequered=" + numberOfEmployeesRequered +
                 ", cstMissing=" + cstMissing +
                 ", cstRecruitment=" + cstRecruitment +
@@ -221,6 +207,7 @@ public class MonthToAggregatePlanning {
                 ", cstOutsourcing=" + cstOutsourcing +
                 ", cstNormal=" + cstNormal +
                 ", cstH=" + cstH +
+                ",cstMaterials=" + cstMaterials +
                 ", cstTotal=" + cstTotal +
                 '}';
     }
