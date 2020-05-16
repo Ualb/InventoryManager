@@ -159,9 +159,30 @@ public class Main {
                 new PlainAggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list3,0);
 
 
-        plain2 = AggregatePlanning.getLevelForceWithOvertime(plain2);
+        plain2 = AggregatePlanning.getLevelForce(plain2);
 
         for (MonthAggregatePlanning month: plain2.getList()) {
+            System.out.println(month);
+        }
+
+        System.out.println("--------------------------------");
+
+        List<MonthAggregatePlanning> list4 = Arrays.asList(
+                new MonthAggregatePlanning(1,1850, 22),
+                new MonthAggregatePlanning(2,1425, 19),
+                new MonthAggregatePlanning(3,1000, 21),
+                new MonthAggregatePlanning(4,850, 21),
+                new MonthAggregatePlanning(5,1150, 22),
+                new MonthAggregatePlanning(6,1725, 20)
+        );
+
+        PlainAggregatePlanning plain3 =
+                new PlainAggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list4,0);
+
+
+        plain3 = AggregatePlanning.getLevelForceWithOutsourcing(plain3);
+
+        for (MonthAggregatePlanning month: plain3.getList()) {
             System.out.println(month);
         }
     }

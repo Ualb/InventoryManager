@@ -5,6 +5,8 @@ import model.PlainAggregatePlanning;
 
 public class AggregatePlanning {
 
+    private enum Type {WITH_OVERTIME, WITHOUT_OVERTIME, PER_MONTH};
+
     public static PlainAggregatePlanning getPersuitStrategy (PlainAggregatePlanning plain) {
         int endInventory = 0;
         int employeesAfter = 0;
@@ -45,7 +47,15 @@ public class AggregatePlanning {
         return plain;
     }
 
+    public static PlainAggregatePlanning getLevelForce (PlainAggregatePlanning plain) {
+        return getLevelForceWithType(plain, Type.WITHOUT_OVERTIME);
+    }
+
     public static PlainAggregatePlanning getLevelForceWithOvertime (PlainAggregatePlanning plain) {
+        return getLevelForceWithType(plain, Type.WITH_OVERTIME);
+    }
+
+    private static PlainAggregatePlanning getLevelForceWithType (PlainAggregatePlanning plain, Type type) {
         int endInventory = 0;
         boolean isFirst = true;
         double cstTotal = 0.0;
@@ -63,6 +73,12 @@ public class AggregatePlanning {
                 month.setStartInventory(plain.getStartInventory());
                 isFirst = false;
             }
+            if (type.equals(Type.WITH_OVERTIME)) {
+                if (endInventory < 0) {
+                    month.setCstExtraHour((int) Math.round(-endInventory * plain.getRequeredTime()) * plain.getExtraTime());
+                    endInventory = 0;
+                }
+            }
             if (month.getStartInventory() != 0)
                 endInventory = month.getRealProduction() + month.getStartInventory() - month.getDemand();
             else
@@ -72,15 +88,39 @@ public class AggregatePlanning {
             else month.setCstMissing(-endInventory * plain.getCf());
             month.setCstMaterials(month.getRealProduction() * plain.getProductCst());
             month.setCstNormal(month.getHoursAvaileble() * plain.getNormalTime());
-            month.setCstTotal(month.getCstMissing() + month.getCstH() + month.getCstMaterials() + month.getCstNormal());
+            month.setCstTotal(month.getCstMissing() + month.getCstH() + month.getCstMaterials() + month.getCstNormal() + month.getCstExtraHour());
             cstTotal += month.getCstTotal();
         }
         plain.setCstTotal(cstTotal);
         return plain;
     }
 
-    public static void getLevelForceWithOutsourcing () {
-
+    public static PlainAggregatePlanning getLevelForceWithOutsourcing (PlainAggregatePlanning plain) {
+        int indexMinium = 0;
+        int miniumDemand = Integer.MAX_VALUE;
+        double cstTotal = 0.0;
+        for (int i = 0; i < plain.getList().size(); ++i) {
+            if (plain.getList().get(i).getDemand() < miniumDemand) {
+                indexMinium = i;
+                miniumDemand = plain.getList().get(i).getDemand();
+            }
+        }
+        plain.setMOI((int) Math.round((plain.getList().get(indexMinium).getDemand()
+                * plain.getRequeredTime()) /
+                (plain.getList().get(indexMinium).getDaysAvaileble()
+                        * plain.HOURS_PER_DAY)));
+        for (MonthAggregatePlanning month: plain.getList()) {
+            month.setHoursAvaileble(month.getDaysAvaileble() * plain.HOURS_PER_DAY * plain.getMOI());
+            month.setRealProduction((int) (month.getHoursAvaileble() / plain.getRequeredTime()));
+            month.setProductsWithOutsourcing(month.getDemand() - month.getRealProduction());
+            month.setCstOutsourcing(month.getProductsWithOutsourcing() * plain.getOutsourcing());
+            month.setCstNormal(month.getHoursAvaileble() * plain.getNormalTime());
+            month.setCstMaterials(month.getRealProduction() * plain.getProductCst());
+            month.setCstTotal(month.getCstMaterials() + month.getCstNormal() + month.getCstOutsourcing());
+            cstTotal += month.getCstTotal();
+        }
+        plain.setCstTotal(cstTotal);
+        return plain;
     }
 
     public static void getPerMothType () {

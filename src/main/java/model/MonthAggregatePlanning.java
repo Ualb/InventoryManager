@@ -8,6 +8,7 @@ public class MonthAggregatePlanning {
     private int hoursAvaileble; //horas disponibles
     private int productionRequered;
     private int realProduction;
+    private int productsWithOutsourcing; //hechos por outsourcing
     private int startInventory;
     private int endInventory;
     private int stockSecurity;
@@ -17,6 +18,7 @@ public class MonthAggregatePlanning {
     private double cstRecruitment; //contratacion
     private double cstDismissal; //despido
     private double cstOutsourcing;
+    private double cstExtraHour; //hora extra
     private double cstNormal;
     private double cstMaterials;
     private double cstH;
@@ -183,9 +185,24 @@ public class MonthAggregatePlanning {
         this.hoursAvaileble = hoursAvaileble;
     }
 
-
     public void setHoursRequered(double hoursRequered) {
         this.hoursRequered = hoursRequered;
+    }
+
+    public double getCstExtraHour() {
+        return cstExtraHour;
+    }
+
+    public void setCstExtraHour(double cstExtraHour) {
+        this.cstExtraHour = cstExtraHour;
+    }
+
+    public int getProductsWithOutsourcing() {
+        return productsWithOutsourcing;
+    }
+
+    public void setProductsWithOutsourcing(int productsWithOutsourcing) {
+        this.productsWithOutsourcing = productsWithOutsourcing;
     }
 
     @Override
@@ -196,6 +213,7 @@ public class MonthAggregatePlanning {
                 ", daysAvaileble=" + daysAvaileble +
                 ", productionRequered=" + productionRequered +
                 ", realProduction=" + realProduction +
+                ", productsWithOutsourcing=" +productsWithOutsourcing +
                 ", startInventory=" + startInventory +
                 ", endInventory=" + endInventory +
                 ", hoursRequered=" + hoursRequered +
@@ -205,6 +223,7 @@ public class MonthAggregatePlanning {
                 ", cstRecruitment=" + cstRecruitment +
                 ", cstDismissal=" + cstDismissal +
                 ", cstOutsourcing=" + cstOutsourcing +
+                ", cstExtraHours=" + cstExtraHour +
                 ", cstNormal=" + cstNormal +
                 ", cstH=" + cstH +
                 ",cstMaterials=" + cstMaterials +
