@@ -1,6 +1,5 @@
 package model;
 
-import Entity.Demand;
 import Entity.OrderProduct;
 
 import java.util.List;
