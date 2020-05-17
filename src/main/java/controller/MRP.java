@@ -6,6 +6,14 @@ import model.RowExplosionMainTable;
 
 import java.util.List;
 
+/**
+ * Planificador de requirimientos de materiales es un
+ * algoritmo que permite obtener los componentes de un producto
+ * justo a tiempo
+ *
+ * Los siguientes algoritmos cuentan con las partes del mismo,
+ * mas no estan entrelazadas aun
+ */
 public class MRP {
 
     private static final int POSITION_ZERO = 0;
@@ -19,6 +27,12 @@ public class MRP {
         LUC
     }
 
+    /**
+     * El algoritmo calcula el MRP por medio de la estrategia L4L
+     *
+     * @param list lista de filas pricipales de una tabla de explosion
+     * @return la lista de filas con la estrategia l4l implementada
+     */
     public static List<RowExplosionMainTable> getL4L(List<RowExplosionMainTable> list) {
         Double sum = new Double(ZERO_VALOR);
         for (RowExplosionMainTable row: list) {
@@ -31,11 +45,18 @@ public class MRP {
         return list;
     }
 
+    /**
+     *  El algoritmo calcula el MRP por medio de la estrategia EOQ
+     *
+     * @param list lista de filas de una tabla de explocion
+     * @return la lista de filas con la estrategia de eoq implementada
+     */
     public static List<RowExplosionMainTable> getEOQ(List<RowExplosionMainTable> list) {
         return getEOQ(list, null);
     }
 
-    public static List<RowExplosionMainTable> getEOQ(List<RowExplosionMainTable> list, Integer EOQ) {
+    // metodo para 3 tipos de estrategias
+    private static List<RowExplosionMainTable> getEOQ(List<RowExplosionMainTable> list, Integer EOQ) {
         Double sumOfDemand = list.stream().
                 mapToDouble(sum -> sum.getDemand()).
                 sum();
@@ -65,6 +86,7 @@ public class MRP {
         return list;
     }
 
+    // uso interno, calculo de la nueva orden porfalta de partes
     private static int getNewOrder(List<RowExplosionMainTable> list, final Integer position) {
         return list.stream().
                 filter(post -> post.getWeekOrMonth() >= position).
@@ -72,6 +94,13 @@ public class MRP {
                 sum();
     }
 
+    /**
+     * El algoritmo calcula el MRP por la estrategia de LTC
+     *
+     * @param list lista de filas de una tabla principal
+     * @param auxList lista de filas de una tabla auxiliar (secundaria)
+     * @return una tabla de explocion a partir de todas las filas de entrada
+     */
     public static ExplosionTable getLTC(List<RowExplosionMainTable> list, List<RowExplosionAuxiliarTable> auxList) {
         final Integer mayorIndex = indexSelected(list, auxList, TypeMethod.LTC);
         list = getEOQ(list, list.stream().
@@ -81,6 +110,13 @@ public class MRP {
         return new ExplosionTable(auxList, list);
     }
 
+    /**
+     * El algoritmo calcula el MRP por la estrategia de LUC
+     *
+     * @param list lista de filas de una tabla principal
+     * @param auxList lista de filas de una tabla auxiliar (secundaria)
+     * @return una tabla de explocion a partir de todas las filas de entrada
+     */
     public static ExplosionTable getLUC(List<RowExplosionMainTable> list, List<RowExplosionAuxiliarTable> auxList) {
         final Integer minorIndex = indexSelected(list, auxList, TypeMethod.LUC);
         list = getEOQ(list, list.stream().
@@ -90,6 +126,7 @@ public class MRP {
         return new ExplosionTable(auxList, list);
     }
 
+    // algoritmo de uso interno
     private static int indexSelected (List<RowExplosionMainTable> list, List<RowExplosionAuxiliarTable> auxList, TypeMethod typeMethod) {
         Integer sumOfLots = ZERO_VALOR;
         Double sumOfH = ZERO_COST;

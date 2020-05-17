@@ -3,10 +3,24 @@ package controller;
 import model.MonthAggregatePlanning;
 import model.PlainAggregatePlanning;
 
+/**
+ * La planiacion agregada es una herramienta para
+ * calcular cuanto me cuesta la produccion requerida
+ * a la demandas del medio
+ */
 public class AggregatePlanning {
 
+    // tipos de opciones en la fuerza nivelada
     private enum Type {WITH_OVERTIME, WITHOUT_OVERTIME, PER_MONTH};
 
+    /**
+     * El algoritmo calcula mediante los datos de un plan de produccion
+     * aplicandole la estrategia de persecucion de la demanda, esta estrategia
+     * se adecua a la demanda, despidiendo o contratando personal
+     *
+     * @param plain plan de produccion
+     * @return el plan de produccion con la estrategia de persecucion en ella
+     */
     public static PlainAggregatePlanning getPersuitStrategy (PlainAggregatePlanning plain) {
         int endInventory = 0;
         int employeesAfter = 0;
@@ -47,14 +61,30 @@ public class AggregatePlanning {
         return plain;
     }
 
+    /**
+     * La estrategia de fuerza nivelada, es aquella que nivela
+     * la cantidad de trabajadores y pierde por no tener
+     *
+     * @param plain plan de produccion
+     * @return el plan de produccion con la estrategia de fuerza nivelada en el
+     */
     public static PlainAggregatePlanning getLevelForce (PlainAggregatePlanning plain) {
         return getLevelForceWithType(plain, Type.WITHOUT_OVERTIME);
     }
 
+    /**
+     * La estrategia de fuerza nivelada puede tener horas extras de sus
+     * empleados con el fin de evitar las perdidas por el faltante
+     *
+     * @see #getLevelForce(PlainAggregatePlanning)
+     * @param plain plan de produccion
+     * @return el plan de produccion con la estrategia de fuerza nivelada con horas extras
+     */
     public static PlainAggregatePlanning getLevelForceWithOvertime (PlainAggregatePlanning plain) {
         return getLevelForceWithType(plain, Type.WITH_OVERTIME);
     }
 
+    // metodo para 3 tipos de fuerza nivelada, normal, con horas extras y por tipo de mes
     private static PlainAggregatePlanning getLevelForceWithType (PlainAggregatePlanning plain, Type type) {
         int endInventory = 0;
         boolean isFirst = true;
@@ -108,6 +138,16 @@ public class AggregatePlanning {
         return plain;
     }
 
+    /**
+     * Si no se quiere pagar horas extras por el faltante en la fuerza nivelada,
+     * se puede contratar a una empresa que lo haga.
+     *
+     * El algoritmo calcula el costo de contratar una empresa ajena para la fabricacion
+     * de productos
+     *
+     * @param plain el plan de produccion
+     * @return el plan de produccion con la estrategia de sub contratacion a una empresa
+     */
     public static PlainAggregatePlanning getLevelForceWithOutsourcing (PlainAggregatePlanning plain) {
         int indexMinium = 0;
         int miniumDemand = Integer.MAX_VALUE;
@@ -136,6 +176,13 @@ public class AggregatePlanning {
         return plain;
     }
 
+    /**
+     * Cuando se desea tener horas extras un mes y sub-contratar en los siguientes
+     * se puede usar este método
+     *
+     * @param plain el plan de produccion
+     * @return el plan de produccion con las dos estrategias al mismo tiempo
+     */
     public static PlainAggregatePlanning getLevelForcePerMothType (PlainAggregatePlanning plain) {
         return getLevelForceWithType(plain, Type.PER_MONTH);
     }
