@@ -24,6 +24,8 @@ public class MonthAggregatePlanning {
     private double cstH;
     private double cstTotal;
 
+    private boolean isExtraHour_NoOutsourcing = false; //true = mes de hora extra - false = mes de outsourcing
+
     public MonthAggregatePlanning() {
     }
 
@@ -31,6 +33,13 @@ public class MonthAggregatePlanning {
         this.number = number;
         this.demand = demand;
         this.daysAvaileble = daysAvaileble;
+    }
+
+    public MonthAggregatePlanning(int number, int demand, int daysAvaileble, boolean isExtraHour_NoOutsourcing) {
+        this.number = number;
+        this.demand = demand;
+        this.daysAvaileble = daysAvaileble;
+        this.isExtraHour_NoOutsourcing = isExtraHour_NoOutsourcing;
     }
 
     public int getNumber() {
@@ -203,6 +212,14 @@ public class MonthAggregatePlanning {
 
     public void setProductsWithOutsourcing(int productsWithOutsourcing) {
         this.productsWithOutsourcing = productsWithOutsourcing;
+    }
+
+    public boolean isExtraHour_NoOutsourcing() {
+        return isExtraHour_NoOutsourcing;
+    }
+
+    public void setExtraHour_NoOutsourcing(boolean extraHour_NoOutsourcing) {
+        isExtraHour_NoOutsourcing = extraHour_NoOutsourcing;
     }
 
     @Override

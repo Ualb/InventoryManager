@@ -13,6 +13,8 @@ public class Main {
 
         PModel.staticInstance(null, null, 0.95, 25.0, 90.0, 4.0, 15.0);
         System.out.println(PModel.getROP());
+
+        System.out.println("--------------------------------");
         // test modelo Q
         QModel.staticInstance(1500000.0,null, 80.0,2.0,0.1 ,2.5, 360.0, null);
         System.out.println(QModel.getQoptimal());
@@ -23,6 +25,7 @@ public class Main {
         System.out.println(QModel.getLevelMax());
         System.out.println(QModel.getCostInYear());
 
+        System.out.println("--------------------------------");
         //mrp test, tamanio del lote l4l
         List<RowExplosionMainTable> list = Arrays.asList(
                 new RowExplosionMainTable(1, 50, 47.0, false),
@@ -39,6 +42,9 @@ public class Main {
             System.out.println(row);
         }
 
+//       MRP EOQ
+
+        System.out.println("--------------------------------");
         list = Arrays.asList(
                 new RowExplosionMainTable(1, 50, 47.0, true, 0.05),
                 new RowExplosionMainTable(2, 60, 47.0, true, 0.05),
@@ -49,13 +55,14 @@ public class Main {
                 new RowExplosionMainTable(7, 60, 47.0, true, 0.05),
                 new RowExplosionMainTable(8, 55, 47.0, true, 0.05));
 
-        System.out.println("--------------------------------");
 
         list = MRP.getEOQ(list);
         for(RowExplosionMainTable row: list) {
             System.out.println(row);
         }
 
+//      MRP LTC
+        System.out.println("--------------------------------");
         list = Arrays.asList(
                 new RowExplosionMainTable(1, 50, 47.0, true, 0.05),
                 new RowExplosionMainTable(2, 60, 47.0, true, 0.05),
@@ -78,7 +85,6 @@ public class Main {
                         new RowExplosionAuxiliarTable("1-2-3-4-5-6-7-8", 0, 0.0, 0.0, 0.0,0.0)
                 );
 
-        System.out.println("--------------------------------");
 
         ExplosionTable explosionTable = MRP.getLTC(list, auxiliarTables);
         list = explosionTable.getMainTable();
@@ -90,6 +96,8 @@ public class Main {
             System.out.println(row);
         }
 
+//      MRP LUC
+        System.out.println("--------------------------------");
         list = Arrays.asList(
                 new RowExplosionMainTable(1, 50, 47.0, true, 0.05),
                 new RowExplosionMainTable(2, 60, 47.0, true, 0.05),
@@ -112,8 +120,6 @@ public class Main {
                         new RowExplosionAuxiliarTable("1-2-3-4-5-6-7-8", 0, 0.0, 0.0, 0.0,0.0)
                 );
 
-        System.out.println("--------------------------------");
-
         explosionTable = MRP.getLUC(list, auxiliarTables);
         list = explosionTable.getMainTable();
         auxiliarTables = explosionTable.getAuxiliarTable();
@@ -124,8 +130,8 @@ public class Main {
             System.out.println(row);
         }
 
-        System.out.println("--------------------------------");
-
+//       Planeacion agregada - Estrategia de persecucion
+        System.out.println("---------------persecution estrategy-----------------");
         List<MonthAggregatePlanning> list2 = Arrays.asList(
                 new MonthAggregatePlanning(1,1800, 22),
                 new MonthAggregatePlanning(2,1500, 19),
@@ -144,8 +150,8 @@ public class Main {
             System.out.println(month);
         }
 
-        System.out.println("--------------------------------");
-
+//      Planeacion agregada - Fuerza nivelada
+        System.out.println("---------------level force-----------------");
         List<MonthAggregatePlanning> list3 = Arrays.asList(
                 new MonthAggregatePlanning(1,1800, 22),
                 new MonthAggregatePlanning(2,1500, 19),
@@ -158,15 +164,34 @@ public class Main {
         PlainAggregatePlanning plain2 =
                 new PlainAggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list3,0);
 
-
         plain2 = AggregatePlanning.getLevelForce(plain2);
 
         for (MonthAggregatePlanning month: plain2.getList()) {
             System.out.println(month);
         }
 
-        System.out.println("--------------------------------");
+        //      Planeacion agregada - Fuerza nivelada con horas extras
+        System.out.println("-----------------extra hours---------------");
+        List<MonthAggregatePlanning> list13 = Arrays.asList(
+                new MonthAggregatePlanning(1,1800, 22),
+                new MonthAggregatePlanning(2,1500, 19),
+                new MonthAggregatePlanning(3,1100, 21),
+                new MonthAggregatePlanning(4,900, 21),
+                new MonthAggregatePlanning(5,1100, 22),
+                new MonthAggregatePlanning(6,1600, 20)
+        );
 
+        PlainAggregatePlanning plain12 =
+                new PlainAggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list13,0);
+
+        plain12 = AggregatePlanning.getLevelForceWithOvertime(plain12);
+
+        for (MonthAggregatePlanning month: plain12.getList()) {
+            System.out.println(month);
+        }
+
+//      Planeacion agregada - Fuerza nivelada con outsourcing
+        System.out.println("----------------outsourcing----------------");
         List<MonthAggregatePlanning> list4 = Arrays.asList(
                 new MonthAggregatePlanning(1,1850, 22),
                 new MonthAggregatePlanning(2,1425, 19),
@@ -179,10 +204,30 @@ public class Main {
         PlainAggregatePlanning plain3 =
                 new PlainAggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list4,0);
 
-
         plain3 = AggregatePlanning.getLevelForceWithOutsourcing(plain3);
 
         for (MonthAggregatePlanning month: plain3.getList()) {
+            System.out.println(month);
+        }
+
+//      Planeacion agregada - fuerza nivelada con outsourcin o horas extras
+        System.out.println("---------------outsourcing or extra hours-----------------");
+        List<MonthAggregatePlanning> list5 = Arrays.asList(
+                new MonthAggregatePlanning(1,1850, 22, true),
+                new MonthAggregatePlanning(2,1425, 19, false),
+                new MonthAggregatePlanning(3,1000, 21, true),
+                new MonthAggregatePlanning(4,850, 21, false),
+                new MonthAggregatePlanning(5,1150, 22, true),
+                new MonthAggregatePlanning(6,1725, 20, false)
+        );
+
+        PlainAggregatePlanning plain4 =
+                new PlainAggregatePlanning(10, 1.5, 5, 200, 250, 4.0, 6.0, 400, 5.0, 0.25, 0, 20,53, list5,0);
+
+
+        plain4 = AggregatePlanning.getLevelForcePerMothType(plain4);
+
+        for (MonthAggregatePlanning month: plain4.getList()) {
             System.out.println(month);
         }
     }
