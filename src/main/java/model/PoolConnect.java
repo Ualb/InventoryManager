@@ -4,10 +4,20 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * La clase representa el punto de imperoterabilidad
+ * entre JVM y SqLite
+ */
 public class PoolConnect {
 
     private static Connection connection;
 
+    /**
+     * Conexion a la base de datos SqLite
+     * nombrada database.db
+     *
+     * @return clase de <code>java.sql.Connection</code>
+     */
     public static Connection getConnection() {
         if(connection != null) {
             try {
