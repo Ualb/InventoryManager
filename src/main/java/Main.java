@@ -7,6 +7,26 @@ import java.util.List;
 public class Main {
 
     public static void main(String []data) {
+
+        /*
+
+        Para el modelo P existen dos opciones en un mismo instanciador,
+        un instanciador es un metodo estatico que tiene de funcion de
+        respaldar valores para metodos estaticos.
+
+        Los metodos de todas las clases del paquete controller son estaticas,
+        la razon es porque todos son funciones de utileria, como Math.sqrt (similar)
+        donde hay un input y un igual siempre output
+
+        La primera forma es cuando se consta con una probabilidad P
+        donde P, recordar que P = Cf / (Cs + Cf)
+        tambien recordar que miu, es obligatoria a menos que se pase por
+        parametro d y L donde miu = d * L
+
+        Generalemente lo que se requiere del modelo p es el punto del
+        inventario en el que se debe ordenar eso es el metodo .ROP()
+
+         */
         // test modelo P
         PModel.staticInstance(0.3, 0.2, null,  10.0, 90.0, null, null);
         System.out.println(PModel.getROP());
@@ -15,6 +35,24 @@ public class Main {
         System.out.println(PModel.getROP());
 
         System.out.println("--------------------------------");
+        /*
+
+        A diferencia del modelo P, el modelo Q no es estadistico, por
+        ende, requiere de muchas mas cosas o indices, como la demanda anual
+        y cuestiones sobre el inventario
+
+        Los outputs mostrados a continuacion son los que generalmente se
+        valen como necesarios como son
+        QOptmial            - cantidad optima de inventario
+        NOrderYear          - numero de ordenes en el anio
+        TimeBetweenOrder    - tiempo entre ordenes
+        ROP                 - el punto donde se debe ordenar (el de advertencia)
+        LevelAverage        - tiempo promedio entre QOptimal y ROP
+        LevelMax            - el nivel maximo del inventario
+        CostInYear          - el coste de este modelo al seguirlo en un anio
+
+         */
+
         // test modelo Q
         QModel.staticInstance(1500000.0,null, 80.0,2.0,0.1 ,2.5, 360.0, null);
         System.out.println(QModel.getQoptimal());
@@ -26,6 +64,39 @@ public class Main {
         System.out.println(QModel.getCostInYear());
 
         System.out.println("--------------------------------");
+        /*
+
+        La clase de MRP es una de las mas extensas, esto es debido a
+        la cantidad de metodos que posee, aqui se debe entender que existen
+        filas auxiliares (RowExplosionAuxiliarTable) y principales
+        (RowExplosionMainTable), las cuales representan valga la redundancia
+        las filas de la tabla de explosion, o la tabla donde se carga todos los
+        datos
+
+        Es importante saber que no todos los metodos necesitan de las filas auxiliares,
+        como L4L (Lot Four Lot) y EOQ solo reciben por parametro filas principales
+
+        Los demas metodos necesitan otra clase, la clase
+        ExplosionTable { List<RowExplosionAuxiliarTable> , List<RowExplosionMainTable }
+        donde la tabla de explosion tiene en si las filas auxiliares y maestras
+        recordar que estos metodos son los que requieren de dos tablas, por ende,
+        lo de auxiliar y principal
+
+        Algo muy imprtante es aclarar que se deben usar los contructores adecuados
+        a la casualidad, pues estan sobre cargados
+
+        cuando se ocupen los metodos como LTC o LUC se necesita la
+        ExplosionTable, pero los valores precargados para RowExplosionAuxiliarTable
+        son solo para el atributo rang, pues lo demas es generado
+
+        la propiedad isWeek en las tablas principales, es para jugar con el
+        frontend, donde explica el tiempo que representa cada fila, o un mes
+        o una semana
+
+        el atributo rang de las tablas auxiliares son las semanas o meses en
+        orden de prueba
+         */
+
         //mrp test, tamanio del lote l4l
         List<RowExplosionMainTable> list = Arrays.asList(
                 new RowExplosionMainTable(1, 50, 47.0, false),
@@ -129,6 +200,32 @@ public class Main {
         for (RowExplosionMainTable row: list) {
             System.out.println(row);
         }
+
+        /*
+
+        El tercer modulo es el de planeacion agregada y se encuentra
+        en la clase con metodos estaticos AggregatePlanning
+
+        existen 5 metodos en total, los cuales son la estrategia de persecucion
+        , la estrategia de fuerza nivelada, fuerza nivelada con horas extras,
+        fueza nivelada con outsourcing, y por tipo de mes o PerMonthType el cual
+        puede ser por horas extras o outsourcing igualmente en fuerza nivelada
+
+        Las clases a ocupar son dos, el plan de planeacion agregada o
+        PlainAggregatePlanning y los meses (filas) llamado MonthAggregatePlanning
+
+        la clase MonthAggregatePlanning tiene contructores sobrecargados
+        donde el atributo que cambia es isExtraHour_NoOutsourcing, el cual
+        se utiliza solamente para diferenciar si el emes es de horas extra
+        o de outsourcing en el PerMonthType
+
+        Todos los valores que se manden como parametros en el contructor de la clase
+        AggregatePlanning son los valores base del algoritmo, algunos ejercicios
+        omiten algunos de estos, es importante que no omita los importantes
+        como por ejemplo el costo de hora extra cuando se utiliza la fuerza agregada
+        con horas extras
+
+         */
 
 //       Planeacion agregada - Estrategia de persecucion
         System.out.println("---------------persecution estrategy-----------------");
