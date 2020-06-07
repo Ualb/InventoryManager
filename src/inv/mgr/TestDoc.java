@@ -4,7 +4,7 @@ import model.*;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class TestDoc {
 
     public static void main(String []data) {
 
