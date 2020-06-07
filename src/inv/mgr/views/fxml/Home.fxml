@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Label alignment="CENTER" layoutX="104.0" layoutY="192.0" prefHeight="30.0" prefWidth="392.0" text="Bienvenidos a Inventory Manager" textFill="#490fff" AnchorPane.bottomAnchor="192.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="104.0" AnchorPane.topAnchor="192.0">
+         <font>
+            <Font name="San Francisco Display Regular" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
