@@ -37,7 +37,7 @@
                                     <HBox prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
                                  </bottom>
                                  <center>
-                                    <LineChart BorderPane.alignment="CENTER">
+                                    <LineChart fx:id="qLineChart" BorderPane.alignment="CENTER">
                                       <xAxis>
                                         <CategoryAxis side="BOTTOM" />
                                       </xAxis>
