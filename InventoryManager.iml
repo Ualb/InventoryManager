@@ -7,7 +7,7 @@
           <unit-entry name="inv:mgr:config.xml" value="5c7e7ce3-c3f5-4146-bad5-fedcb69f420a" />
         </datasource-map>
         <naming-strategy-map />
-        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/inv/mgr/config.xml" />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/inv/mgr/resources/hibernate.cfg.xml" />
       </configuration>
     </facet>
   </component>

@@ -1,4 +1,4 @@
-package inv.mgr.entities;
+package inv.mgr.model.entities;
 
 import javax.persistence.*;
 import java.util.Objects;
