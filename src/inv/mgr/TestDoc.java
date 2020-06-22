@@ -1,6 +1,7 @@
 package inv.mgr;
 
 import inv.mgr.model.dao.impl.ProductoIDAO;
+import inv.mgr.model.entities.ProductoEntity;
 import inv.mgr.utils.inventory.*;
 import inv.mgr.utils.productionutils.*;
 
@@ -331,21 +332,13 @@ public class TestDoc {
             System.out.println(month);
         }
         ProductoIDAO prod = new ProductoIDAO();
-        ProductoEntity nuevo = new ProductoEntity();
-        nuevo.setNombre("Pan Simple");
-        nuevo.setNivel((short) 1);
-        nuevo.setTipoDemanda("INDEPENDIENTE");
-        nuevo.setCosto(10.5);
-        nuevo.setcH(5);
-        nuevo.setcL(2);
-        nuevo.setcS(4);
-        nuevo.setReserva(50);
-        System.out.println(nuevo.getNombre());
         try {
-            prod.saveOrUpdate(nuevo);
+            ProductoEntity nuevo = prod.get(1);
+            System.out.println(nuevo.getNombre());
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
 

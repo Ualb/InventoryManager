@@ -19,7 +19,7 @@ public class GenericIDAO<T, ID extends Serializable> implements DAO<T, ID> {
     private final static Logger LOGGER = Logger.getLogger(GenericIDAO.class.getName());
 
     public GenericIDAO() {
-        sessionFactory = HibernateUtil.getInstance().getSessionFactory();
+        sessionFactory = HibernateUtil.getSessionFactory();
     }
 
     @Override
