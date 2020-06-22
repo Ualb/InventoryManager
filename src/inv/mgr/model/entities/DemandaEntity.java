@@ -4,20 +4,20 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "demanda", schema = "main", catalog = "")
+@Table(name = "demanda", schema = "xtf0qnoava02o4qj", catalog = "")
 public class DemandaEntity {
-    private Short demandaId;
+    private int demandaId;
     private String uTiempo;
-    private Object cTiempo;
-    private Object tDisponible;
+    private double cTiempo;
+    private Double tDisponible;
 
     @Id
     @Column(name = "demanda_id")
-    public Short getDemandaId() {
+    public int getDemandaId() {
         return demandaId;
     }
 
-    public void setDemandaId(Short demandaId) {
+    public void setDemandaId(int demandaId) {
         this.demandaId = demandaId;
     }
 
@@ -33,21 +33,21 @@ public class DemandaEntity {
 
     @Basic
     @Column(name = "c_tiempo")
-    public Object getcTiempo() {
+    public double getcTiempo() {
         return cTiempo;
     }
 
-    public void setcTiempo(Object cTiempo) {
+    public void setcTiempo(double cTiempo) {
         this.cTiempo = cTiempo;
     }
 
     @Basic
     @Column(name = "t_disponible")
-    public Object gettDisponible() {
+    public Double gettDisponible() {
         return tDisponible;
     }
 
-    public void settDisponible(Object tDisponible) {
+    public void settDisponible(Double tDisponible) {
         this.tDisponible = tDisponible;
     }
 
@@ -56,9 +56,9 @@ public class DemandaEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DemandaEntity that = (DemandaEntity) o;
-        return Objects.equals(demandaId, that.demandaId) &&
+        return demandaId == that.demandaId &&
+                Double.compare(that.cTiempo, cTiempo) == 0 &&
                 Objects.equals(uTiempo, that.uTiempo) &&
-                Objects.equals(cTiempo, that.cTiempo) &&
                 Objects.equals(tDisponible, that.tDisponible);
     }
 

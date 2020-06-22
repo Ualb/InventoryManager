@@ -4,25 +4,26 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "producto", schema = "main", catalog = "")
+@Table(name = "producto", schema = "xtf0qnoava02o4qj", catalog = "")
 public class ProductoEntity {
-    private Short productoId;
+    private int productoId;
     private String nombre;
-    private Object reserva;
-    private Short nivel;
-    private Object costo;
-    private Object cS;
-    private Object cL;
-    private Object cH;
+    private Double reserva;
+    private Integer nivel;
+    private Double costo;
+    private Double cS;
+    private Double cL;
+    private Double cH;
     private String tipoDemanda;
+    private String tipoProducto;
 
     @Id
     @Column(name = "producto_id")
-    public Short getProductoId() {
+    public int getProductoId() {
         return productoId;
     }
 
-    public void setProductoId(Short productoId) {
+    public void setProductoId(int productoId) {
         this.productoId = productoId;
     }
 
@@ -38,66 +39,66 @@ public class ProductoEntity {
 
     @Basic
     @Column(name = "reserva")
-    public Object getReserva() {
+    public Double getReserva() {
         return reserva;
     }
 
-    public void setReserva(Object reserva) {
+    public void setReserva(Double reserva) {
         this.reserva = reserva;
     }
 
     @Basic
     @Column(name = "nivel")
-    public Short getNivel() {
+    public Integer getNivel() {
         return nivel;
     }
 
-    public void setNivel(Short nivel) {
+    public void setNivel(Integer nivel) {
         this.nivel = nivel;
     }
 
     @Basic
     @Column(name = "costo")
-    public Object getCosto() {
+    public Double getCosto() {
         return costo;
     }
 
-    public void setCosto(Object costo) {
+    public void setCosto(Double costo) {
         this.costo = costo;
     }
 
     @Basic
     @Column(name = "cS")
-    public Object getcS() {
+    public Double getcS() {
         return cS;
     }
 
-    public void setcS(Object cS) {
+    public void setcS(Double cS) {
         this.cS = cS;
     }
 
     @Basic
     @Column(name = "cL")
-    public Object getcL() {
+    public Double getcL() {
         return cL;
     }
 
-    public void setcL(Object cL) {
+    public void setcL(Double cL) {
         this.cL = cL;
     }
 
     @Basic
     @Column(name = "cH")
-    public Object getcH() {
+    public Double getcH() {
         return cH;
     }
 
-    public void setcH(Object cH) {
+    public void setcH(Double cH) {
         this.cH = cH;
     }
 
     @Basic
-    @Column(name = "tipoDemanda")
+    @Column(name = "tipo_demanda")
     public String getTipoDemanda() {
         return tipoDemanda;
     }
@@ -106,12 +107,22 @@ public class ProductoEntity {
         this.tipoDemanda = tipoDemanda;
     }
 
+    @Basic
+    @Column(name = "tipo_producto")
+    public String getTipoProducto() {
+        return tipoProducto;
+    }
+
+    public void setTipoProducto(String tipoProducto) {
+        this.tipoProducto = tipoProducto;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProductoEntity that = (ProductoEntity) o;
-        return Objects.equals(productoId, that.productoId) &&
+        return productoId == that.productoId &&
                 Objects.equals(nombre, that.nombre) &&
                 Objects.equals(reserva, that.reserva) &&
                 Objects.equals(nivel, that.nivel) &&
@@ -119,11 +130,12 @@ public class ProductoEntity {
                 Objects.equals(cS, that.cS) &&
                 Objects.equals(cL, that.cL) &&
                 Objects.equals(cH, that.cH) &&
-                Objects.equals(tipoDemanda, that.tipoDemanda);
+                Objects.equals(tipoDemanda, that.tipoDemanda) &&
+                Objects.equals(tipoProducto, that.tipoProducto);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productoId, nombre, reserva, nivel, costo, cS, cL, cH, tipoDemanda);
+        return Objects.hash(productoId, nombre, reserva, nivel, costo, cS, cL, cH, tipoDemanda, tipoProducto);
     }
 }

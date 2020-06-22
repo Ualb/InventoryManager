@@ -1,9 +1,6 @@
 package inv.mgr;
 
-import inv.mgr.model.dao.ProductoDAO;
 import inv.mgr.model.dao.impl.ProductoIDAO;
-import inv.mgr.model.entities.ProductoEntity;
-import inv.mgr.utils.HibernateUtil;
 import inv.mgr.utils.inventory.*;
 import inv.mgr.utils.productionutils.*;
 

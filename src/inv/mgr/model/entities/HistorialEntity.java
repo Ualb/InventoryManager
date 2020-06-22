@@ -1,64 +1,65 @@
 package inv.mgr.model.entities;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "historial", schema = "main", catalog = "")
+@Table(name = "historial", schema = "xtf0qnoava02o4qj", catalog = "")
 public class HistorialEntity {
-    private Short historialId;
-    private Object qOptimo;
-    private Object rop;
-    private Object tEspera;
-    private Object fecha;
+    private int historialId;
+    private double qOptimo;
+    private double rop;
+    private double tEspera;
+    private Date fecha;
 
     @Id
     @Column(name = "historial_id")
-    public Short getHistorialId() {
+    public int getHistorialId() {
         return historialId;
     }
 
-    public void setHistorialId(Short historialId) {
+    public void setHistorialId(int historialId) {
         this.historialId = historialId;
     }
 
     @Basic
     @Column(name = "q_optimo")
-    public Object getqOptimo() {
+    public double getqOptimo() {
         return qOptimo;
     }
 
-    public void setqOptimo(Object qOptimo) {
+    public void setqOptimo(double qOptimo) {
         this.qOptimo = qOptimo;
     }
 
     @Basic
     @Column(name = "rop")
-    public Object getRop() {
+    public double getRop() {
         return rop;
     }
 
-    public void setRop(Object rop) {
+    public void setRop(double rop) {
         this.rop = rop;
     }
 
     @Basic
     @Column(name = "t_espera")
-    public Object gettEspera() {
+    public double gettEspera() {
         return tEspera;
     }
 
-    public void settEspera(Object tEspera) {
+    public void settEspera(double tEspera) {
         this.tEspera = tEspera;
     }
 
     @Basic
     @Column(name = "fecha")
-    public Object getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(Object fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -67,10 +68,10 @@ public class HistorialEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         HistorialEntity that = (HistorialEntity) o;
-        return Objects.equals(historialId, that.historialId) &&
-                Objects.equals(qOptimo, that.qOptimo) &&
-                Objects.equals(rop, that.rop) &&
-                Objects.equals(tEspera, that.tEspera) &&
+        return historialId == that.historialId &&
+                Double.compare(that.qOptimo, qOptimo) == 0 &&
+                Double.compare(that.rop, rop) == 0 &&
+                Double.compare(that.tEspera, tEspera) == 0 &&
                 Objects.equals(fecha, that.fecha);
     }
 
