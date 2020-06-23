@@ -1,9 +1,9 @@
-package inv.mgr;
+package mgr;
 
-import inv.mgr.model.dao.impl.ProductoIDAO;
-import inv.mgr.model.entities.ProductoEntity;
-import inv.mgr.utils.inventory.*;
-import inv.mgr.utils.productionutils.*;
+import mgr.model.dao.impl.ProductoIDAO;
+import mgr.model.entities.ProductoEntity;
+import mgr.utils.inventory.*;
+import mgr.utils.productionutils.*;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package inv.mgr.utils.viewsutils;
+package mgr.utils.viewsutils;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;

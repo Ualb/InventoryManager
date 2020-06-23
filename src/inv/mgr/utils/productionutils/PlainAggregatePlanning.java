@@ -1,4 +1,4 @@
-package inv.mgr.utils.productionutils;
+package mgr.utils.productionutils;
 
 import java.util.List;
 

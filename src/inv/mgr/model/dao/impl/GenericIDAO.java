@@ -1,7 +1,7 @@
-package inv.mgr.model.dao.impl;
+package mgr.model.dao.impl;
 
-import inv.mgr.model.dao.DAO;
-import inv.mgr.utils.HibernateUtil;
+import mgr.model.dao.DAO;
+import mgr.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.exception.ConstraintViolationException;

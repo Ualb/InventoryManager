@@ -1,7 +1,7 @@
-package inv.mgr.utils.inventory;
+package mgr.utils.inventory;
 
-import inv.mgr.utils.productionutils.MonthAggregatePlanning;
-import inv.mgr.utils.productionutils.PlainAggregatePlanning;
+import mgr.utils.productionutils.MonthAggregatePlanning;
+import mgr.utils.productionutils.PlainAggregatePlanning;
 
 /**
  * La planiacion agregada es una herramienta para

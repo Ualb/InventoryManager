@@ -1,4 +1,4 @@
-package inv.mgr.utils.inventory;
+package mgr.utils.inventory;
 
 import org.apache.commons.math3.distribution.NormalDistribution;
 

@@ -1,4 +1,4 @@
-package inv.mgr.model.dao;
+package mgr.model.dao;
 
 import java.io.Serializable;
 import java.util.List;
