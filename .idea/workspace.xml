@@ -22,73 +22,8 @@
     <list default="true" id="c6fa75f6-263d-4e98-9c5b-4ad313f7e06e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InventoryManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryManager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/MainApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/TestDoc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/controller/DemandController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/hibernate.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/model/dao/DAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/model/dao/DemandaDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/model/dao/HistorialDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/model/dao/ProductoDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/model/dao/impl/GenericIDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/model/dao/impl/ProductoIDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/model/entities/DemandaEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/model/entities/HistorialEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/model/entities/ProductoEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/HibernateUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/productioncalcs/AggregatePlanning.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/productioncalcs/MRP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/productioncalcs/PModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/productioncalcs/QModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/productionutils/ExplosionTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/productionutils/MonthAggregatePlanning.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/productionutils/PlainAggregatePlanning.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/productionutils/RowExplosionAuxiliarTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/productionutils/RowExplosionMainTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/viewsutils/Alerts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/viewsutils/JFXValidators.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/viewsutils/stringconverters/ProductoConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/DemandController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/FXController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/fxml/Demand.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/fxml/Home.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/Demand.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/Demand.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/Home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/MainApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/TestDoc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/controller/DemandController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/hibernate.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/model/dao/DAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/model/dao/DemandaDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/model/dao/HistorialDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/model/dao/ProductoDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/model/dao/impl/GenericIDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/model/dao/impl/ProductoIDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/model/entities/DemandaEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/model/entities/HistorialEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/model/entities/ProductoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/HibernateUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/productioncalcs/AggregatePlanning$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/productioncalcs/AggregatePlanning.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/productioncalcs/MRP$TypeMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/productioncalcs/MRP.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/productioncalcs/PModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/productioncalcs/QModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/productionutils/ExplosionTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/productionutils/MonthAggregatePlanning.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/productionutils/PlainAggregatePlanning.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/productionutils/RowExplosionAuxiliarTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/productionutils/RowExplosionMainTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/viewsutils/Alerts.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/viewsutils/JFXValidators.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/utils/viewsutils/stringconverters/ProductoConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/views/DemandController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/views/FXController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/views/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/views/fxml/Demand.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mgr/views/fxml/Home.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/productioncalcs/PModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/utils/productioncalcs/PModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/DemandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/DemandController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +118,8 @@
       <option name="presentableId" value="Default" />
       <updated>1592874499220</updated>
       <workItem from="1592874518246" duration="12199000" />
-      <workItem from="1593148731522" duration="6876000" />
+      <workItem from="1593148731522" duration="6927000" />
+      <workItem from="1593189492419" duration="4437000" />
     </task>
     <servers />
   </component>
@@ -208,10 +144,10 @@
     </state>
     <state x="137" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1592878057298" />
     <state x="137" y="51" width="930" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1366.743@0.25.1366.743" timestamp="1593152010495" />
-    <state x="491" y="103" width="374" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1593124808498">
+    <state x="491" y="103" width="374" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1593206442823">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="491" y="103" width="374" height="587" key="#com.intellij.ide.util.MemberChooser/0.25.1366.743@0.25.1366.743" timestamp="1593124808498" />
+    <state x="491" y="103" width="374" height="587" key="#com.intellij.ide.util.MemberChooser/0.25.1366.743@0.25.1366.743" timestamp="1593206442823" />
     <state x="495" y="133" width="524" height="445" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1593150708989">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
@@ -245,26 +181,26 @@
     </state>
     <state x="463" y="126" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592880896141" />
     <state x="463" y="152" width="424" height="484" key="FileChooserDialogImpl/0.25.1366.743@0.25.1366.743" timestamp="1593151893216" />
-    <state width="1318" height="169" key="GridCell.Tab.0.bottom" timestamp="1593157026500">
+    <state width="1318" height="169" key="GridCell.Tab.0.bottom" timestamp="1593212135767">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="348" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592876591045" />
-    <state width="1318" height="169" key="GridCell.Tab.0.bottom/0.25.1366.743@0.25.1366.743" timestamp="1593157026500" />
-    <state width="1318" height="169" key="GridCell.Tab.0.center" timestamp="1593157026499">
+    <state width="1318" height="169" key="GridCell.Tab.0.bottom/0.25.1366.743@0.25.1366.743" timestamp="1593212135767" />
+    <state width="1318" height="169" key="GridCell.Tab.0.center" timestamp="1593212135765">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="348" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592876591045" />
-    <state width="1318" height="169" key="GridCell.Tab.0.center/0.25.1366.743@0.25.1366.743" timestamp="1593157026499" />
-    <state width="1318" height="169" key="GridCell.Tab.0.left" timestamp="1593157026499">
+    <state width="1318" height="169" key="GridCell.Tab.0.center/0.25.1366.743@0.25.1366.743" timestamp="1593212135765" />
+    <state width="1318" height="169" key="GridCell.Tab.0.left" timestamp="1593212135764">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="348" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592876591044" />
-    <state width="1318" height="169" key="GridCell.Tab.0.left/0.25.1366.743@0.25.1366.743" timestamp="1593157026499" />
-    <state width="1318" height="169" key="GridCell.Tab.0.right" timestamp="1593157026500">
+    <state width="1318" height="169" key="GridCell.Tab.0.left/0.25.1366.743@0.25.1366.743" timestamp="1593212135764" />
+    <state width="1318" height="169" key="GridCell.Tab.0.right" timestamp="1593212135766">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="348" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592876591045" />
-    <state width="1318" height="169" key="GridCell.Tab.0.right/0.25.1366.743@0.25.1366.743" timestamp="1593157026500" />
+    <state width="1318" height="169" key="GridCell.Tab.0.right/0.25.1366.743@0.25.1366.743" timestamp="1593212135766" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1592874790993">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

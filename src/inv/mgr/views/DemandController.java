@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import inv.mgr.model.entities.DemandaEntity;
 import inv.mgr.model.entities.ProductoEntity;
+import inv.mgr.utils.productioncalcs.PModel;
+import inv.mgr.utils.statutils.Statistic;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,10 +14,7 @@ import javafx.fxml.Initializable;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.URL;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -71,15 +70,20 @@ public class DemandController extends FXController implements Initializable {
 
     public void handleLoad(){
         ProductoEntity selected = productsCmb.getSelectionModel().getSelectedItem();
+        if(selected == null){
+            Alerts.simpleAlert("Por favor seleccione un producto válido", 4);
+            return;
+        }
         if(selected.getTipoDemanda().equals("Constante")){
             demandaQ(selected);
         }else{
-            demandaP();
+            demandaP(selected);
         }
     }
 
     private void demandaQ(ProductoEntity prod){
         //obtener demandas
+
         try {
             DemandaIDAO didao = new DemandaIDAO();
             DemandaEntity key = new DemandaEntity();
@@ -95,10 +99,11 @@ public class DemandController extends FXController implements Initializable {
             key = demandas.get(index);
 
             if(key.getuTiempo().equals("mes")){
+                // se necesita demanda anual
                 key.setcTiempo(key.getcTiempo()*12);
             }
             QModel.staticInstance(key.getcTiempo(), prod.getcH(), prod.getcS(),
-                    prod.getcL(), 0.1, prod.getCosto(), 250.0, null);
+                    prod.getcL(), null, prod.getCosto(), 250.0, null);
             Double qopt = QModel.getQoptimal(), rop = QModel.getROP(), qm = QModel.getLevelMax();
 
             ddlbl.setText(QModel.getDayDemand().toString());
@@ -118,8 +123,50 @@ public class DemandController extends FXController implements Initializable {
         }
     }
 
-    private void demandaP() {
-        Alerts.simpleAlert("No implementado", 2);
+    private void demandaP(ProductoEntity prod) {
+        //obtener demandas
+
+        try {
+            DemandaIDAO didao = new DemandaIDAO();
+            DemandaEntity key = new DemandaEntity();
+            List<DemandaEntity> demandas = didao.findAll();
+            List<DemandaEntity> demandaProducto = new ArrayList<>();
+            demandas.forEach(demandaEntity -> {
+                if(demandaEntity.getProductoId()==prod.getProductoId()){
+                    demandaProducto.add(demandaEntity);
+                }
+            });
+
+            if(demandaProducto.size()<=0){
+                Alerts.simpleAlert("No hay demanda registrada para este producto", 4);
+                return;
+            }
+            Statistic stat = new Statistic(demandaProducto);
+            double miu = stat.getMedia();
+            double sigma = stat.sD();
+
+            PModel.staticInstance(null, null, 0.95, sigma, miu, null, prod.getcL());
+
+
+            ddlbl.setText("---");
+            calbl.setText("---");
+            noalbl.setText("---");
+            qoptlbl.setText("---");
+            roplbl.setText(PModel.getROP().toString());
+            avgivlbl.setText("---");
+            maxivlbl.setText("---");
+
+            drawLine();
+        } catch (Exception e) {
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            e.printStackTrace(pw);
+            Alerts.exceptionAlert(e.getMessage(), sw.toString());
+        }
+    }
+
+    private void drawLine(){
+        qLineChart.getData().clear();
     }
 
     private void drawLine(double istock, double rop, double qopt, double qm, double t){

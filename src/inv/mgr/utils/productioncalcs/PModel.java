@@ -32,7 +32,7 @@ public class PModel {
      * @param P_ probabilidad del faltante y el total
      * @param sigma_ varianza muestral @NoNull
      * @param miu_ media aritmetica muestral @NoNull
-     * @param d_ demanda diaria @NoNuññ
+     * @param d_ demanda diaria @NoNull
      * @param L_ Tiempo entre ordenar y recibir @NoNull
      */
     public static void staticInstance(Double Cf_, Double Cs_, Double P_, Double sigma_, Double miu_, Double d_, Double L_) {
