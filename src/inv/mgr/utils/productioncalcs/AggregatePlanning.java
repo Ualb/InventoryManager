@@ -1,4 +1,4 @@
-package mgr.utils.inventory;
+package mgr.utils.productioncalcs;
 
 import mgr.utils.productionutils.MonthAggregatePlanning;
 import mgr.utils.productionutils.PlainAggregatePlanning;

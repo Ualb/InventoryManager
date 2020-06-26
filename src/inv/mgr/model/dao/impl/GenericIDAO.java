@@ -18,7 +18,7 @@ public class GenericIDAO<T, ID extends Serializable> implements DAO<T, ID> {
 
     private final static Logger LOGGER = Logger.getLogger(GenericIDAO.class.getName());
 
-    public GenericIDAO() {
+    public GenericIDAO() throws Exception {
         sessionFactory = HibernateUtil.getSessionFactory();
     }
 
@@ -148,7 +148,7 @@ public class GenericIDAO<T, ID extends Serializable> implements DAO<T, ID> {
     public List<T> findAll() throws Exception {
         Session session = sessionFactory.getCurrentSession();
         try {
-
+            session.beginTransaction();
             Query query = session.createQuery("SELECT e FROM " + getEntityClass().getName() + " e");
             List<T> entities = query.list();
 

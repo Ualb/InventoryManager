@@ -1,4 +1,4 @@
-package mgr.utils.inventory;
+package mgr.utils.productioncalcs;
 
 import mgr.utils.productionutils.ExplosionTable;
 import mgr.utils.productionutils.RowExplosionAuxiliarTable;

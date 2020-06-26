@@ -1,4 +1,4 @@
-package mgr.utils.inventory;
+package mgr.utils.productioncalcs;
 
 /**
  * QModel (Economic Order Quantity EOQ)

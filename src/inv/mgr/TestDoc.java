@@ -2,7 +2,7 @@ package mgr;
 
 import mgr.model.dao.impl.ProductoIDAO;
 import mgr.model.entities.ProductoEntity;
-import mgr.utils.inventory.*;
+import mgr.utils.productioncalcs.*;
 import mgr.utils.productionutils.*;
 
 import java.util.Arrays;
@@ -331,7 +331,13 @@ public class TestDoc {
         for (MonthAggregatePlanning month: plain4.getList()) {
             System.out.println(month);
         }
-        ProductoIDAO prod = new ProductoIDAO();
+        ProductoIDAO prod = null;
+        try {
+            prod = new ProductoIDAO();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return;
+        }
         try {
             ProductoEntity nuevo = prod.get(1);
             System.out.println(nuevo.getNombre());
