@@ -1,8 +1,8 @@
-package mgr.utils.productioncalcs;
+package inv.mgr.utils.productioncalcs;
 
-import mgr.utils.productionutils.ExplosionTable;
-import mgr.utils.productionutils.RowExplosionAuxiliarTable;
-import mgr.utils.productionutils.RowExplosionMainTable;
+import inv.mgr.utils.productionutils.ExplosionTable;
+import inv.mgr.utils.productionutils.RowExplosionAuxiliarTable;
+import inv.mgr.utils.productionutils.RowExplosionMainTable;
 
 import java.util.List;
 

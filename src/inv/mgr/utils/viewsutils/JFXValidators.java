@@ -1,4 +1,4 @@
-package mgr.utils.viewsutils;
+package inv.mgr.utils.viewsutils;
 
 public class JFXValidators {
 }

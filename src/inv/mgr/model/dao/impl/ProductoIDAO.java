@@ -1,7 +1,7 @@
-package mgr.model.dao.impl;
+package inv.mgr.model.dao.impl;
 
-import mgr.model.dao.ProductoDAO;
-import mgr.model.entities.ProductoEntity;
+import inv.mgr.model.dao.ProductoDAO;
+import inv.mgr.model.entities.ProductoEntity;
 
 public class ProductoIDAO extends GenericIDAO<ProductoEntity, Integer> implements ProductoDAO {
     public ProductoIDAO() throws Exception {

@@ -5,16 +5,16 @@
 <hibernate-configuration>
   <session-factory>
     <property name="connection.url">
-      jdbc:mariadb://u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/xtf0qnoava02o4qj
+        jdbc:mariadb://u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/xtf0qnoava02o4qj
     </property>
+    <property name="hibernate.current_session_context_class">thread</property>
     <property name="connection.username">v41ngiz9k19egrid</property>
     <property name="connection.password">m49xbq9i4an8rahq</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MariaDBDialect</property>
     <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
-    <property name="dialect">org.hibernate.dialect.MariaDBDialect</property>
-    <property name="hibernate.current_session_context_class">thread</property>
-    <mapping class="mgr.model.entities.DemandaEntity"/>
-      <mapping class="mgr.model.entities.HistorialEntity"/>
-      <mapping class="mgr.model.entities.ProductoEntity"/>
+      <mapping class="inv.mgr.model.entities.DemandaEntity"/>
+      <mapping class="inv.mgr.model.entities.HistorialEntity"/>
+      <mapping class="inv.mgr.model.entities.ProductoEntity"/>
       <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

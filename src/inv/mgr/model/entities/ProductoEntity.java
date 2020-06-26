@@ -1,4 +1,4 @@
-package mgr.model.entities;
+package inv.mgr.model.entities;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -8,6 +8,7 @@ import java.util.Objects;
 public class ProductoEntity {
     private int productoId;
     private String nombre;
+    private Integer prodMaestroId;
     private Double reserva;
     private Integer nivel;
     private Double costo;
@@ -35,6 +36,16 @@ public class ProductoEntity {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Basic
+    @Column(name = "prod_maestro_id")
+    public Integer getProdMaestroId() {
+        return prodMaestroId;
+    }
+
+    public void setProdMaestroId(Integer prodMaestroId) {
+        this.prodMaestroId = prodMaestroId;
     }
 
     @Basic
@@ -124,6 +135,7 @@ public class ProductoEntity {
         ProductoEntity that = (ProductoEntity) o;
         return productoId == that.productoId &&
                 Objects.equals(nombre, that.nombre) &&
+                Objects.equals(prodMaestroId, that.prodMaestroId) &&
                 Objects.equals(reserva, that.reserva) &&
                 Objects.equals(nivel, that.nivel) &&
                 Objects.equals(costo, that.costo) &&
@@ -136,6 +148,6 @@ public class ProductoEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(productoId, nombre, reserva, nivel, costo, cS, cL, cH, tipoDemanda, tipoProducto);
+        return Objects.hash(productoId, nombre, prodMaestroId, reserva, nivel, costo, cS, cL, cH, tipoDemanda, tipoProducto);
     }
 }

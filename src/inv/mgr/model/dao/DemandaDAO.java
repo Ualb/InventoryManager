@@ -1,6 +1,6 @@
-package mgr.model.dao;
+package inv.mgr.model.dao;
 
-import mgr.model.entities.DemandaEntity;
+import inv.mgr.model.entities.DemandaEntity;
 
 public interface DemandaDAO extends DAO<DemandaEntity, Integer>{
 }

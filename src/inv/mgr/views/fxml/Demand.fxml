@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mgr.views.DemandController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inv.mgr.views.DemandController">
    <children>
       <BorderPane layoutX="216.0" layoutY="75.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -37,7 +37,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </JFXComboBox>
-                  <JFXButton buttonType="RAISED" prefHeight="26.0" prefWidth="191.0" style="-fx-background-color: #ff6663;" text="Calcular" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" prefHeight="26.0" prefWidth="191.0" style="-fx-background-color: #ff6663;" text="Calcular" onAction="#handleLoad" textFill="WHITE">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
@@ -54,12 +54,12 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
                         <LineChart fx:id="qLineChart" layoutX="-20.0" layoutY="-22.0" prefHeight="293.0" prefWidth="193.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <xAxis>
-                              <CategoryAxis side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis side="LEFT" />
-                           </yAxis>
+                            <xAxis>
+                                <NumberAxis side="BOTTOM" fx:id="xAxis" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis layoutX="10.0" side="LEFT" fx:id="yAxis" />
+                            </yAxis>
                         </LineChart>
                      </children>
                   </AnchorPane>

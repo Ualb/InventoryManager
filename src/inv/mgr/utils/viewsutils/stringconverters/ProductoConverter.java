@@ -1,7 +1,7 @@
-package mgr.utils.viewsutils.stringconverters;
+package inv.mgr.utils.viewsutils.stringconverters;
 
+import inv.mgr.model.entities.ProductoEntity;
 import javafx.util.StringConverter;
-import mgr.model.entities.ProductoEntity;
 
 public class ProductoConverter extends StringConverter<ProductoEntity> {
 

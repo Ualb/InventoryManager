@@ -1,4 +1,4 @@
-package mgr.utils.productioncalcs;
+package inv.mgr.utils.productioncalcs;
 
 import org.apache.commons.math3.distribution.NormalDistribution;
 

@@ -1,4 +1,4 @@
-package mgr.model.entities;
+package inv.mgr.model.entities;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -10,6 +10,8 @@ public class DemandaEntity {
     private String uTiempo;
     private double cTiempo;
     private Double tDisponible;
+    private Integer productoId;
+    private Integer cantidad;
 
     @Id
     @Column(name = "demanda_id")
@@ -51,6 +53,26 @@ public class DemandaEntity {
         this.tDisponible = tDisponible;
     }
 
+    @Basic
+    @Column(name = "producto_id")
+    public Integer getProductoId() {
+        return productoId;
+    }
+
+    public void setProductoId(Integer productoId) {
+        this.productoId = productoId;
+    }
+
+    @Basic
+    @Column(name = "cantidad")
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -59,11 +81,13 @@ public class DemandaEntity {
         return demandaId == that.demandaId &&
                 Double.compare(that.cTiempo, cTiempo) == 0 &&
                 Objects.equals(uTiempo, that.uTiempo) &&
-                Objects.equals(tDisponible, that.tDisponible);
+                Objects.equals(tDisponible, that.tDisponible) &&
+                Objects.equals(productoId, that.productoId) &&
+                Objects.equals(cantidad, that.cantidad);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(demandaId, uTiempo, cTiempo, tDisponible);
+        return Objects.hash(demandaId, uTiempo, cTiempo, tDisponible, productoId, cantidad);
     }
 }

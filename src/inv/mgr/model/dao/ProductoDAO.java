@@ -1,6 +1,6 @@
-package mgr.model.dao;
+package inv.mgr.model.dao;
 
-import mgr.model.entities.ProductoEntity;
+import inv.mgr.model.entities.ProductoEntity;
 
 public interface ProductoDAO extends DAO<ProductoEntity, Integer>{
 }

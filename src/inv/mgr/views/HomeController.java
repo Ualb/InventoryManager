@@ -1,4 +1,4 @@
-package mgr.views;
+package inv.mgr.views;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;

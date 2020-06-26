@@ -1,6 +1,6 @@
-package mgr.views;
+package inv.mgr.views;
 
-import mgr.MainApp;
+import inv.mgr.MainApp;
 
 public class FXController {
     protected MainApp mainApp;

@@ -1,6 +1,6 @@
-package mgr.model.dao;
+package inv.mgr.model.dao;
 
-import mgr.model.entities.HistorialEntity;
+import inv.mgr.model.entities.HistorialEntity;
 
 public interface HistorialDAO extends DAO<HistorialEntity, Integer> {
 }

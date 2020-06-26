@@ -1,4 +1,4 @@
-package mgr.model.entities;
+package inv.mgr.model.entities;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -12,6 +12,7 @@ public class HistorialEntity {
     private double rop;
     private double tEspera;
     private Date fecha;
+    private Integer productoId;
 
     @Id
     @Column(name = "historial_id")
@@ -63,6 +64,16 @@ public class HistorialEntity {
         this.fecha = fecha;
     }
 
+    @Basic
+    @Column(name = "producto_id")
+    public Integer getProductoId() {
+        return productoId;
+    }
+
+    public void setProductoId(Integer productoId) {
+        this.productoId = productoId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -72,11 +83,12 @@ public class HistorialEntity {
                 Double.compare(that.qOptimo, qOptimo) == 0 &&
                 Double.compare(that.rop, rop) == 0 &&
                 Double.compare(that.tEspera, tEspera) == 0 &&
-                Objects.equals(fecha, that.fecha);
+                Objects.equals(fecha, that.fecha) &&
+                Objects.equals(productoId, that.productoId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(historialId, qOptimo, rop, tEspera, fecha);
+        return Objects.hash(historialId, qOptimo, rop, tEspera, fecha, productoId);
     }
 }

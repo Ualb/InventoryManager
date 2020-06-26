@@ -1,12 +1,12 @@
-package mgr;
+package inv.mgr;
 
-import mgr.views.FXController;
+import inv.mgr.views.FXController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import mgr.utils.viewsutils.Alerts;
+import inv.mgr.utils.viewsutils.Alerts;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
