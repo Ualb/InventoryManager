@@ -28,23 +28,30 @@ public class MainApp extends Application {
     }
 
     /**
-     *Mostrar ventana principal
+     * Mostrar ventana principal
      */
-    public void showHome(){
+    public void showHome() {
         refreshPrimaryStage("views/fxml/Home.fxml");
     }
 
     /**
      * Mostrar ventana de la demanda
      */
-    public void showDemand(){
+    public void showDemand() {
         refreshPrimaryStage("views/fxml/Demand.fxml");
+    }
+
+    /**
+     * Mostrar ventana de MRP Raiz
+     */
+    public void showMRPRoot() {
+        refreshPrimaryStage("views/fxml/MRPMain.fxml");
     }
 
     /**
      * Refrescar escena principal
      */
-    private void refreshPrimaryStage(String view_path){
+    private void refreshPrimaryStage(String view_path) {
         // Se crea un fxml loader
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource(view_path));

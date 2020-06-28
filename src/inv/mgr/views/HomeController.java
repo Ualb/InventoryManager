@@ -17,4 +17,5 @@ public class HomeController extends FXController {
         this.mainApp.showDemand();
     }
 
+    public void handleMRP(){this.mainApp.showMRPRoot();}
 }
