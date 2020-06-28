@@ -29,6 +29,28 @@ public class MRPMainController extends FXController implements Initializable {
 
 
     public void handleBack(){this.mainApp.showHome();}
+
+    public void handleShow(){
+        ProductoEntity prod = productCmb.getSelectionModel().getSelectedItem();
+        if (prod == null){
+            Alerts.simpleAlert("Seleccione un producto", 4);
+            return;
+        }
+        String method = methodCmb.getSelectionModel().getSelectedItem();
+        if(method==null){
+            Alerts.simpleAlert("Seleccione un método", 4);
+            return;
+        }
+        if(method.equals("L4L") || method.equals("EOQ")){
+            this.mainApp.showMRPSingle(mainPane, prod);
+        }
+        else if(method.equals("LTC") || method.equals("LUC")){
+            this.mainApp.showMRPMultiple(mainPane, prod);
+        }
+        else {
+            Alerts.simpleAlert("Internal Error", 4);
+        }
+    }
     /**
      * Called to initialize a controller after its root element has been
      * completely processed.
@@ -39,7 +61,7 @@ public class MRPMainController extends FXController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        methodCmb.setItems(FXCollections.observableArrayList("L4L", "EQQ", "LTC", "LUC"));
+        methodCmb.setItems(FXCollections.observableArrayList("L4L", "EOQ", "LTC", "LUC"));
         try {
             ProductoIDAO pidao = new ProductoIDAO();
             List<ProductoEntity> products = pidao.findAll();

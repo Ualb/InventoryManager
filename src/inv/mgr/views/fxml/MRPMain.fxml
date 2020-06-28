@@ -33,7 +33,7 @@
                <children>
                   <JFXComboBox fx:id="productCmb" promptText="Seleccione Producto" />
                   <JFXComboBox fx:id="methodCmb" promptText="Seleccione metodo" />
-                  <JFXButton buttonType="RAISED" style="-fx-background-color: #ffad69ff;" text="Calcular">
+                  <JFXButton onAction="#handleShow" buttonType="RAISED" style="-fx-background-color: #ffad69ff;" text="Calcular">
                      <padding>
                         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                      </padding>

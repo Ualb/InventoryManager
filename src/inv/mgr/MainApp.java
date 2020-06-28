@@ -1,13 +1,18 @@
 package inv.mgr;
 
+import inv.mgr.model.entities.ProductoEntity;
 import inv.mgr.views.FXController;
+import inv.mgr.views.MRPTableController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import inv.mgr.utils.viewsutils.Alerts;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
@@ -46,6 +51,38 @@ public class MainApp extends Application {
      */
     public void showMRPRoot() {
         refreshPrimaryStage("views/fxml/MRPMain.fxml");
+    }
+
+    public void showMRPSingle(BorderPane parent, ProductoEntity prod){
+        loadMRPTable(parent, "views/fxml/MRPSingle.fxml", prod);
+    }
+
+    public void showMRPMultiple(BorderPane parent, ProductoEntity prod){
+        loadMRPTable(parent, "views/fxml/MRPMultiple.fxml", prod);
+    }
+
+    /**
+     * Loads a scene into center of parent pane for MRP tables
+     * @param parent parent panel
+     * @param path fxml route
+     * @param prod product to show mrp
+     */
+    private void loadMRPTable(BorderPane parent, String path, ProductoEntity prod){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource(path));
+        try {
+            AnchorPane root = loader.load();
+            MRPTableController ctrl = loader.getController();
+            ctrl.setMainApp(this);
+            ctrl.setProducto(prod);
+            parent.setCenter(root);
+        } catch (IOException e) {
+            //Forma de imprimir excepciones usando el alert
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            e.printStackTrace(pw);
+            Alerts.exceptionAlert(e.getMessage(), sw.toString());
+        }
     }
 
     /**
