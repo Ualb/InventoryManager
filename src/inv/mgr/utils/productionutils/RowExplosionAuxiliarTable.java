@@ -6,18 +6,18 @@ public class RowExplosionAuxiliarTable {
     private Integer lot;
     private Double H;
     private Double S;
-    private Double CT;
+    private Double CT2;
     private Double CU;
 
     public RowExplosionAuxiliarTable() {
     }
 
-    public RowExplosionAuxiliarTable(String rang, Integer lot, Double h, Double s, Double CT, Double CU) {
+    public RowExplosionAuxiliarTable(String rang, Integer lot, Double h, Double s, Double CT2, Double CU) {
         this.rang = rang;
         this.lot = lot;
         H = h;
         S = s;
-        this.CT = CT;
+        this.CT2 = CT2;
         this.CU = CU;
     }
 
@@ -53,12 +53,12 @@ public class RowExplosionAuxiliarTable {
         S = s;
     }
 
-    public Double getCT() {
-        return CT;
+    public Double getCT2() {
+        return CT2;
     }
 
-    public void setCT(Double CT) {
-        this.CT = CT;
+    public void setCT2(Double CT2) {
+        this.CT2 = CT2;
     }
 
     public Double getCU() {
@@ -76,7 +76,7 @@ public class RowExplosionAuxiliarTable {
                 ", lot=" + lot +
                 ", H=" + H +
                 ", S=" + S +
-                ", CT=" + CT +
+                ", CT=" + CT2 +
                 ", CU=" + CU +
                 '}';
     }

@@ -16,7 +16,7 @@ public class Statistic {
         for (DemandaEntity d : demandas){
             suma += d.getCantidad();
         }
-        this.media=suma/ demandas.size();
+        this.media = suma / demandas.size();
     }
 
     public List<DemandaEntity> getDemandas() {
