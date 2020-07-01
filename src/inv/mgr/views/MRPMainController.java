@@ -1,9 +1,11 @@
 package inv.mgr.views;
 
 import com.jfoenix.controls.JFXComboBox;
+import inv.mgr.MainApp;
 import inv.mgr.model.dao.impl.ProductoIDAO;
 import inv.mgr.model.entities.ProductoEntity;
 import inv.mgr.utils.viewsutils.Alerts;
+import inv.mgr.utils.viewsutils.ConstansDatas;
 import inv.mgr.utils.viewsutils.stringconverters.ProductoConverter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,11 +30,11 @@ public class MRPMainController extends FXController implements Initializable {
     private  JFXComboBox<String> methodCmb;
 
 
-    public void handleBack(){this.mainApp.showHome();}
+    public void handleBack() {this.mainApp.showHome();}
 
-    public void handleShow(){
+    public void handleShow() {
         ProductoEntity prod = productCmb.getSelectionModel().getSelectedItem();
-        if (prod == null){
+        if (prod == null) {
             Alerts.simpleAlert("Seleccione un producto", 4);
             return;
         }
@@ -41,7 +43,9 @@ public class MRPMainController extends FXController implements Initializable {
             Alerts.simpleAlert("Seleccione un método", 4);
             return;
         }
-        if(method.equals("L4L") || method.equals("EOQ")){
+        ConstansDatas.typeMethod = method;
+        ConstansDatas.productSelectedByDependenceType = prod;
+        if(method.equals("L4L") || method.equals("EOQ")) {
             this.mainApp.showMRPSingle(mainPane, prod);
         }
         else if(method.equals("LTC") || method.equals("LUC")){
@@ -64,7 +68,7 @@ public class MRPMainController extends FXController implements Initializable {
         methodCmb.setItems(FXCollections.observableArrayList("L4L", "EOQ", "LTC", "LUC"));
         try {
             ProductoIDAO pidao = new ProductoIDAO();
-            List<ProductoEntity> products = pidao.findAll();
+            List<ProductoEntity> products = pidao.getSpecifyProduct("Dependiente");
             ObservableList<ProductoEntity> prods = FXCollections.observableArrayList(products);
             productCmb.setItems(prods);
             productCmb.setConverter(new ProductoConverter());

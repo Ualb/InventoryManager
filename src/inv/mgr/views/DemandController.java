@@ -69,41 +69,38 @@ public class DemandController extends FXController implements Initializable {
     }
 
     public void handleLoad(){
-        ProductoEntity selected = productsCmb.getSelectionModel().getSelectedItem();
-        if(selected == null){
+        ProductoEntity productSelected = productsCmb.getSelectionModel().getSelectedItem();
+        if(productSelected == null) {
             Alerts.simpleAlert("Por favor seleccione un producto válido", 4);
             return;
         }
-        if(selected.getTipoDemanda().equals("Constante")){
-            demandaQ(selected);
-        }else{
-            demandaP(selected);
-        }
+        if(productSelected.getTipoDemanda().equals("Constante"))
+            demandaQ(productSelected);
+        else
+            demandaP(productSelected);
+
     }
 
-    private void demandaQ(ProductoEntity prod){
+    private void demandaQ(ProductoEntity prod) {
         //obtener demandas
-
         try {
             DemandaIDAO didao = new DemandaIDAO();
             DemandaEntity key = new DemandaEntity();
             key.setProductoId(prod.getProductoId());
             List<DemandaEntity> demandas = didao.findAll();
             int index = Collections.binarySearch(demandas, key, Comparator.comparingInt(DemandaEntity::getProductoId));
-            System.out.println("before index");
-            if(index<0){
+            if(index < 0) {
                 Alerts.simpleAlert("No hay demanda registrada para este producto", 4);
                 return;
             }
-            System.out.println("after index");
             key = demandas.get(index);
 
-            if(key.getuTiempo().equals("mes")){
+            if(key.getuTiempo().equals("mes")) {
                 // se necesita demanda anual
-                key.setcTiempo(key.getcTiempo()*12);
+                key.setCantidad(key.getCantidad() * 12);
             }
-            QModel.staticInstance(key.getcTiempo(), prod.getcH(), prod.getcS(),
-                    prod.getcL(), null, prod.getCosto(), 250.0, null);
+            QModel.staticInstance(Double.parseDouble(key.getCantidad().toString()), prod.getcH(), prod.getcS(),
+                    prod.getcL(), null, prod.getCosto(), 360.0, null);
             Double qopt = QModel.getQoptimal(), rop = QModel.getROP(), qm = QModel.getLevelMax();
 
             ddlbl.setText(QModel.getDayDemand().toString());
@@ -125,28 +122,26 @@ public class DemandController extends FXController implements Initializable {
 
     private void demandaP(ProductoEntity prod) {
         //obtener demandas
-
         try {
             DemandaIDAO didao = new DemandaIDAO();
-            DemandaEntity key = new DemandaEntity();
             List<DemandaEntity> demandas = didao.findAll();
             List<DemandaEntity> demandaProducto = new ArrayList<>();
             demandas.forEach(demandaEntity -> {
-                if(demandaEntity.getProductoId()==prod.getProductoId()){
+                if(demandaEntity.getProductoId() == prod.getProductoId()){
                     demandaProducto.add(demandaEntity);
                 }
             });
 
-            if(demandaProducto.size()<=0){
+            if(demandaProducto.size() <= 0) {
                 Alerts.simpleAlert("No hay demanda registrada para este producto", 4);
                 return;
             }
+
             Statistic stat = new Statistic(demandaProducto);
             double miu = stat.getMedia();
             double sigma = stat.sD();
 
-            PModel.staticInstance(null, null, 0.95, sigma, miu, null, prod.getcL());
-
+            PModel.staticInstance(12.5, 12.5, 0.95, sigma, miu, null, prod.getcL());
 
             ddlbl.setText("---");
             calbl.setText("---");
@@ -194,15 +189,15 @@ public class DemandController extends FXController implements Initializable {
         XYChart.Series maingraf = new XYChart.Series();
 
         int ct = 0;
-        while (ct<=250){
+        while (ct <= 250) {
             maingraf.getData().add(new XYChart.Data<>(ct, qm));
             ct+=t;
             maingraf.getData().add(new XYChart.Data<>(ct, istock));
         }
         maingraf.setName("Línea principal");
 
-        yAxis.setUpperBound(qm+2);
-        yAxis.setTickUnit(qm/5);
+        yAxis.setUpperBound(qm + 2);
+        yAxis.setTickUnit(qm / 5);
 
         qLineChart.getData().addAll(is, rorder, qoptim, qmax, maingraf);
     }
@@ -225,7 +220,7 @@ public class DemandController extends FXController implements Initializable {
         //cargar productos en el combobox
         try {
             ProductoIDAO pidao = new ProductoIDAO();
-            List<ProductoEntity> productos = pidao.findAll();
+            List<ProductoEntity> productos = pidao.getSpecifyProduct("Independiente");
             ObservableList<ProductoEntity> prods = FXCollections.observableArrayList(productos);
             productsCmb.setItems(prods);
             productsCmb.setConverter(new ProductoConverter());

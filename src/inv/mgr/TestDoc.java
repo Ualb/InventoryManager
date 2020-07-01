@@ -67,7 +67,20 @@ public class TestDoc {
         System.out.println(QModel.getLevelMax());
         System.out.println(QModel.getCostInYear());
 
-        System.out.println("--------------------------------");
+        System.out.println("-------------------------------- second q model -----------------------");
+
+
+        // test modelo Q
+        QModel.staticInstance(10200.0,5.0, 2.5,2.0,null ,55.0, 360.0, null);
+        System.out.println("Qoptima "+QModel.getQoptimal());
+        System.out.println("ordenes año "+QModel.getNOrderYear());
+        System.out.println("tiempo entre orden "+QModel.getTimeBetweenOrder());
+        System.out.println("rop "+QModel.getROP());
+        System.out.println("nivel promedio "+QModel.getLevelAvarage());
+        System.out.println("nivel maximo "+QModel.getLevelMax());
+        System.out.println("costo anual "+QModel.getCostInYear());
+
+        System.out.println("----------------MRP L4L----------------");
         /*
 
         La clase de MRP es una de las mas extensas, esto es debido a

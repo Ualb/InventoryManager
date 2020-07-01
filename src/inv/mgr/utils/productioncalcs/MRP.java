@@ -135,7 +135,7 @@ public class MRP {
             auxList.get(index).setLot(list.get(index).getDemand() + sumOfLots);
             auxList.get(index).setH(H * list.get(index).getDemand() * index + sumOfH);
             auxList.get(index).setS(list.get(index).getS());
-            auxList.get(index).setCT(auxList.get(index).getH() + auxList.get(index).getS());
+            auxList.get(index).setCT2(auxList.get(index).getH() + auxList.get(index).getS());
             sumOfLots = auxList.get(index).getLot();
             sumOfH = auxList.get(index).getH();
         }
@@ -163,9 +163,9 @@ public class MRP {
         Integer minorIndex = ZERO_VALOR;
         Double minorCst = Double.MAX_VALUE;
         for (int index = 0; index < auxList.size(); ++index)
-            if (minorCst > auxList.get(index).getCT() / auxList.get(index).getLot()) {
+            if (minorCst > auxList.get(index).getCT2() / auxList.get(index).getLot()) {
                 minorIndex = index;
-                minorCst = auxList.get(index).getCT() / auxList.get(index).getLot();
+                minorCst = auxList.get(index).getCT2() / auxList.get(index).getLot();
             }
         return minorIndex;
     }

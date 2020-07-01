@@ -122,19 +122,5 @@ public class RowExplosionMainTable {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        RowExplosionMainTable that = (RowExplosionMainTable) o;
-        return productCost.equals(that.productCost) &&
-                weekOrMonth.equals(that.weekOrMonth) &&
-                demand.equals(that.demand) &&
-                production.equals(that.production) &&
-                endInventory.equals(that.endInventory) &&
-                H.equals(that.H) &&
-                S.equals(that.S) &&
-                CT.equals(that.CT) &&
-                isWeek.equals(that.isWeek);
-    }
+
 }

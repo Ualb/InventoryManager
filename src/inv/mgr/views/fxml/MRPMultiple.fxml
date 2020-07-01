@@ -14,8 +14,13 @@
                <children>
                   <TableView fx:id="mainTable" layoutX="67.0" layoutY="87.0" prefHeight="398.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn prefWidth="75.0" fx:id="weekOrMoth" text="Número"/>
+                        <TableColumn prefWidth="75.0" fx:id="demand" text="Demanda"/>
+                        <TableColumn prefWidth="75.0" fx:id="production" text="Producción"/>
+                        <TableColumn prefWidth="75.0" fx:id="endInventory" text="Inventario Final"/>
+                        <TableColumn prefWidth="75.0" fx:id="H" text="Costo de Mantener"/>
+                        <TableColumn prefWidth="75.0" fx:id="S" text="Costo de Pedir"/>
+                        <TableColumn prefWidth="75.0" fx:id="CT" text="Costo Total"/>
                     </columns>
                   </TableView>
                </children>
@@ -24,8 +29,12 @@
                <children>
                   <TableView fx:id="auxTable" layoutX="59.0" layoutY="54.0" prefHeight="398.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+
+                        <TableColumn prefWidth="75.0" fx:id="rang" text="Semana"/>
+                        <TableColumn prefWidth="75.0" fx:id="lot" text="Producción"/>
+                        <TableColumn prefWidth="75.0" fx:id="h" text="Costo de Mantener"/>
+                        <TableColumn prefWidth="75.0" fx:id="s" text="Costo de Pedir"/>
+                        <TableColumn prefWidth="75.0" fx:id="CT2" text="Costo Total"/>
                     </columns>
                   </TableView>
                </children>
