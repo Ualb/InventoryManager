@@ -29,6 +29,22 @@ public class DemandaIDAO extends GenericIDAO<DemandaEntity, Integer> implements 
         return demandaEntities;
     }
 
+    public List<DemandaEntity> allDebamandByIDPlain(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        List<DemandaEntity> demandaEntities = new ArrayList<>();
+        try {
+            session.beginTransaction();
+            Query query = session.createQuery("from DemandaEntity as de where de.productoId = 6 " +
+                            "and de.tDisponible is not null"
+                    , DemandaEntity.class);
+            demandaEntities = query.list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            Alerts.simpleAlert("No se puede acceder a la lista de demandas", 4);
+        }
+        return demandaEntities;
+    }
+
     /*    public List<DemandaEntity> getDemand(Integer producto_id) throws Exception {
         Session session = sessionFactory.getCurrentSession();
         try {
