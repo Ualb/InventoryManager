@@ -16,6 +16,7 @@
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
           <factory-entry name="Entities" />
+          <factory-entry name="InventoryManager" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>

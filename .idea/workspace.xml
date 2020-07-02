@@ -21,14 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c6fa75f6-263d-4e98-9c5b-4ad313f7e06e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/viewsutils/JFXValidators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/utils/viewsutils/JFXValidators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/fxml/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/fxml/Home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/MainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/utils/viewsutils/JFXValidators.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/utils/viewsutils/JFXValidators.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/Home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,11 +138,12 @@
       <workItem from="1593392917117" duration="2364000" />
       <workItem from="1593532630752" duration="37106000" />
       <workItem from="1593573904916" duration="205000" />
+      <workItem from="1593733067794" duration="201000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -215,26 +208,26 @@
     </state>
     <state x="463" y="126" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592880896141" />
     <state x="463" y="152" width="424" height="484" key="FileChooserDialogImpl/0.25.1366.743@0.25.1366.743" timestamp="1593151893216" />
-    <state width="1318" height="169" key="GridCell.Tab.0.bottom" timestamp="1593651039001">
+    <state width="1318" height="169" key="GridCell.Tab.0.bottom" timestamp="1593651960419">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="362" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593573665317" />
-    <state width="1318" height="169" key="GridCell.Tab.0.bottom/0.25.1366.743@0.25.1366.743" timestamp="1593651039001" />
-    <state width="1318" height="169" key="GridCell.Tab.0.center" timestamp="1593651039000">
+    <state width="1318" height="169" key="GridCell.Tab.0.bottom/0.25.1366.743@0.25.1366.743" timestamp="1593651960419" />
+    <state width="1318" height="169" key="GridCell.Tab.0.center" timestamp="1593651960418">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="362" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593573665317" />
-    <state width="1318" height="169" key="GridCell.Tab.0.center/0.25.1366.743@0.25.1366.743" timestamp="1593651039000" />
-    <state width="1318" height="169" key="GridCell.Tab.0.left" timestamp="1593651039000">
+    <state width="1318" height="169" key="GridCell.Tab.0.center/0.25.1366.743@0.25.1366.743" timestamp="1593651960418" />
+    <state width="1318" height="169" key="GridCell.Tab.0.left" timestamp="1593651960417">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="362" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593573665301" />
-    <state width="1318" height="169" key="GridCell.Tab.0.left/0.25.1366.743@0.25.1366.743" timestamp="1593651039000" />
-    <state width="1318" height="169" key="GridCell.Tab.0.right" timestamp="1593651039000">
+    <state width="1318" height="169" key="GridCell.Tab.0.left/0.25.1366.743@0.25.1366.743" timestamp="1593651960417" />
+    <state width="1318" height="169" key="GridCell.Tab.0.right" timestamp="1593651960418">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="362" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593573665317" />
-    <state width="1318" height="169" key="GridCell.Tab.0.right/0.25.1366.743@0.25.1366.743" timestamp="1593651039000" />
+    <state width="1318" height="169" key="GridCell.Tab.0.right/0.25.1366.743@0.25.1366.743" timestamp="1593651960418" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1593540331461">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
