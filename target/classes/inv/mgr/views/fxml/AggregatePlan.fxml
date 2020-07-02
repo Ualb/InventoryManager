@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.251" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inv.mgr.views.AggregatePlanController">
+   <children>
+      <BorderPane layoutX="200.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton onAction="#handleBack" alignment="CENTER" buttonType="RAISED" style="-fx-background-color: #9c3848;" text="&lt;-Atras" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="7.0" left="25.0" right="25.0" top="7.0" />
+                     </padding></JFXButton>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+               </padding>
+            </HBox>
+         </top>
+         <right>
+            <GridPane prefHeight="556.0" prefWidth="291.0" vgap="5.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXTextField fx:id="outsourcingTxt" focusColor="#1e3888" labelFloat="true" prefWidth="150.0" promptText="Costo de outsourcing" GridPane.rowIndex="7" />
+                  <JFXTextField fx:id="contratTxt" focusColor="#1e3888" labelFloat="true" prefWidth="150.0" promptText="Costo de contratación" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="despidoTxt" focusColor="#1e3888" labelFloat="true" prefWidth="150.0" promptText="Costo de despido" GridPane.rowIndex="2" />
+                  <JFXTextField fx:id="moextraTxt" focusColor="#1e3888" labelFloat="true" prefWidth="150.0" promptText="Costo Horas extras" GridPane.rowIndex="4" />
+                  <JFXTextField fx:id="secstockTxt" focusColor="#1e3888" labelFloat="true" layoutX="10.0" layoutY="165.0" prefWidth="150.0" promptText="Stock de seguridad" GridPane.rowIndex="6" />
+                  <JFXTextField fx:id="timeTxt" focusColor="#1e3888" labelFloat="true" prefHeight="26.0" prefWidth="216.0" promptText="Tiempo Requerido por unidad" GridPane.rowIndex="5" />
+                  <JFXTextField fx:id="monormalTxt" focusColor="#1e3888" labelFloat="true" prefWidth="150.0" promptText="Costo hora normal" GridPane.rowIndex="3" />
+                  <JFXTextField prefWidth="150.0" GridPane.rowIndex="10" />
+                  <JFXTextField prefWidth="150.0" GridPane.rowIndex="9" />
+                  <JFXTextField fx:id="moinicialTxt" focusColor="#1e3888" labelFloat="true" prefWidth="150.0" promptText="Mano de obra inicial" GridPane.rowIndex="8" />
+                  <JFXTextField fx:id="faltanteTxt" focusColor="#1e3888" labelFloat="true" prefWidth="150.0" promptText="Costo del faltante" />
+                  <JFXButton alignment="CENTER" buttonType="RAISED" style="-fx-background-color: #9c3848;" text="Calcular" textFill="WHITE" GridPane.rowIndex="11">
+                     <padding>
+                        <Insets bottom="7.0" left="25.0" right="25.0" top="7.0" />
+                     </padding></JFXButton>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+               </padding>
+            </GridPane>
+         </right>
+         <center>
+            <TableView fx:id="mainTable" prefHeight="574.0" prefWidth="693.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

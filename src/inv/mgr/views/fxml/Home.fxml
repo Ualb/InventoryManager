@@ -26,7 +26,7 @@
                         <Font size="18.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="addplanBtn" buttonType="RAISED" prefHeight="33.0" prefWidth="350.0" style="-fx-background-color: #1e3888ff;" text="Función Plan Agregado" textFill="WHITE">
+                  <JFXButton fx:id="addplanBtn" onAction="#handleAP" buttonType="RAISED" prefHeight="33.0" prefWidth="350.0" style="-fx-background-color: #1e3888ff;" text="Función Plan Agregado" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>

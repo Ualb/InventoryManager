@@ -62,6 +62,13 @@ public class MainApp extends Application {
     }
 
     /**
+     * Muestra la ventana de plan agregado
+     */
+    public void showAggregatePlan(){
+        refreshPrimaryStage("views/fxml/AggregatePlan.fxml");
+    }
+
+    /**
      * Loads a scene into center of parent pane for MRP tables
      * @param parent parent panel
      * @param path fxml route

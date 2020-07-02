@@ -18,4 +18,6 @@ public class HomeController extends FXController {
     }
 
     public void handleMRP(){this.mainApp.showMRPRoot();}
+
+    public void handleAP(){this.mainApp.showAggregatePlan();}
 }
