@@ -5,6 +5,7 @@ import com.jfoenix.validation.NumberValidator;
 import com.jfoenix.validation.RequiredFieldValidator;
 import javafx.scene.input.KeyEvent;
 
+// TODO validar el limite de los inputs con menos de 10 digitos
 
 public class JFXValidators {
     /**

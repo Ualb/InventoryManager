@@ -45,6 +45,8 @@ public class AggregatePlanController extends FXController implements Initializab
         this.mainApp.showHome();
     }
 
+//    TODO agregar combo box para seleccionar la estrategia: Persecucion, Fuerza Nivelada, Horas Extras, Outsourcing
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         JFXValidators.addNumberValidator(faltanteTxt);
