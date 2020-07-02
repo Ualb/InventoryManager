@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
@@ -55,14 +56,15 @@
                   <JFXTextField fx:id="secstockTxt" focusColor="#1e3888" labelFloat="true" layoutX="10.0" layoutY="165.0" prefWidth="150.0" promptText="Stock de seguridad" GridPane.rowIndex="6" />
                   <JFXTextField fx:id="timeTxt" focusColor="#1e3888" labelFloat="true" prefHeight="26.0" prefWidth="216.0" promptText="Tiempo Requerido por unidad" GridPane.rowIndex="5" />
                   <JFXTextField fx:id="monormalTxt" focusColor="#1e3888" labelFloat="true" prefWidth="150.0" promptText="Costo hora normal" GridPane.rowIndex="3" />
-                  <JFXTextField prefWidth="150.0" GridPane.rowIndex="10" />
-                  <JFXTextField prefWidth="150.0" GridPane.rowIndex="9" />
                   <JFXTextField fx:id="moinicialTxt" focusColor="#1e3888" labelFloat="true" prefWidth="150.0" promptText="Mano de obra inicial" GridPane.rowIndex="8" />
                   <JFXTextField fx:id="faltanteTxt" focusColor="#1e3888" labelFloat="true" prefWidth="150.0" promptText="Costo del faltante" />
-                  <JFXButton alignment="CENTER" buttonType="RAISED" style="-fx-background-color: #9c3848;" text="Calcular" textFill="WHITE" GridPane.rowIndex="11">
+                   <JFXComboBox fx:id="methodCmb" promptText="Seleccione metodo" GridPane.rowIndex="9"  prefWidth="216.0"/>
+                   <JFXComboBox fx:id="productCmb" promptText="Seleccione Producto" GridPane.rowIndex="10"  prefWidth="216.0"/>
+                  <JFXButton alignment="CENTER"  onAction="#onShow" buttonType="RAISED" style="-fx-background-color: #9c3848;" text="Calcular" textFill="WHITE" GridPane.rowIndex="11">
                      <padding>
                         <Insets bottom="7.0" left="25.0" right="25.0" top="7.0" />
-                     </padding></JFXButton>
+                     </padding>
+                  </JFXButton>
                </children>
                <padding>
                   <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
@@ -72,8 +74,25 @@
          <center>
             <TableView fx:id="mainTable" prefHeight="574.0" prefWidth="693.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn prefWidth="75.0" text="Mes" fx:id="number"/>
+                <TableColumn prefWidth="75.0" text="Demanda" fx:id="demand"/>
+                  <TableColumn prefWidth="75.0" text="Producción Real" fx:id="realProduction"/>
+                  <TableColumn prefWidth="75.0" text="Producción" fx:id="production"/>
+                  <TableColumn prefWidth="75.0" text="Producción Outsourcing" fx:id="productionOut"/>
+                  <TableColumn prefWidth="75.0" text="Inv. Inicial" fx:id="startInventory"/>
+                  <TableColumn prefWidth="75.0" text="Inv. Final" fx:id="endInventory"/>
+                  <TableColumn prefWidth="75.0" text="Hr. Requeridas" fx:id="hoursRequered"/>
+                  <TableColumn prefWidth="75.0" text="Hr. Disponible" fx:id="hoursAvaileble"/>
+                  <TableColumn prefWidth="75.0" text="Emp. Requeridos" fx:id="numberOfEmployeesRequered"/>
+                  <TableColumn prefWidth="75.0" text="CF" fx:id="cstMissing"/>
+                  <TableColumn prefWidth="75.0" text="Cst. Reclutar" fx:id="cstRecruitment"/>
+                  <TableColumn prefWidth="75.0" text="Cst. Despido" fx:id="cstDismissal"/>
+                  <TableColumn prefWidth="75.0" text="Cst. Outsourcing" fx:id="cstOutsourcing"/>
+                  <TableColumn prefWidth="75.0" text="Cst. Hr. Extra" fx:id="cstExtraHour"/>
+                  <TableColumn prefWidth="75.0" text="Cst. Normal" fx:id="cstNormal"/>
+                  <TableColumn prefWidth="75.0" text="H" fx:id="cstH"/>
+                  <TableColumn prefWidth="75.0" text="Cst. Materiales" fx:id="cstMaterials"/>
+                  <TableColumn prefWidth="75.0" text="Cst. Total" fx:id="cstTotal"/>
               </columns>
             </TableView>
          </center>

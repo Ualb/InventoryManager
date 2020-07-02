@@ -189,7 +189,7 @@ public class DemandController extends FXController implements Initializable {
         XYChart.Series maingraf = new XYChart.Series();
 
         int ct = 0;
-        while (ct <= 250) {
+        while (ct <= 100) {
             maingraf.getData().add(new XYChart.Data<>(ct, qm));
             ct+=t;
             maingraf.getData().add(new XYChart.Data<>(ct, istock));
