@@ -33,7 +33,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <JFXButton buttonType="RAISED" onAction="#handleProductList" prefHeight="194.0" prefWidth="250.0" style="-fx-background-color: #1e3888ff;" text="Ver Productos" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.halignment="CENTER">
+                  <JFXButton fx:id="demandaBtn1" buttonType="RAISED" onAction="#handleProductList" prefHeight="194.0" prefWidth="250.0" style="-fx-background-color: #1e3888ff;" text="Ver Productos" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.halignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>

@@ -21,20 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c6fa75f6-263d-4e98-9c5b-4ad313f7e06e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/viewsutils/JFXValidators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/utils/viewsutils/JFXValidators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/AggregatePlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/AggregatePlanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/DemandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/DemandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/fxml/AggregatePlan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/fxml/AggregatePlan.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/fxml/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/fxml/Home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/MainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/utils/viewsutils/JFXValidators.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/utils/viewsutils/JFXValidators.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/AggregatePlanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/AggregatePlanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/DemandController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/DemandController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/AggregatePlan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/AggregatePlan.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/Home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,26 +196,26 @@
     </state>
     <state x="463" y="126" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592880896141" />
     <state x="463" y="152" width="424" height="484" key="FileChooserDialogImpl/0.25.1366.743@0.25.1366.743" timestamp="1593151893216" />
-    <state width="1023" height="169" key="GridCell.Tab.0.bottom" timestamp="1593739338358">
+    <state width="1318" height="169" key="GridCell.Tab.0.bottom" timestamp="1593740309157">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="202" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593728063233" />
-    <state width="1023" height="169" key="GridCell.Tab.0.bottom/0.25.1366.743@0.25.1366.743" timestamp="1593739338358" />
-    <state width="1023" height="169" key="GridCell.Tab.0.center" timestamp="1593739338358">
+    <state width="1318" height="169" key="GridCell.Tab.0.bottom/0.25.1366.743@0.25.1366.743" timestamp="1593740309157" />
+    <state width="1318" height="169" key="GridCell.Tab.0.center" timestamp="1593740309156">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="202" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593728063233" />
-    <state width="1023" height="169" key="GridCell.Tab.0.center/0.25.1366.743@0.25.1366.743" timestamp="1593739338358" />
-    <state width="1023" height="169" key="GridCell.Tab.0.left" timestamp="1593739338357">
+    <state width="1318" height="169" key="GridCell.Tab.0.center/0.25.1366.743@0.25.1366.743" timestamp="1593740309156" />
+    <state width="1318" height="169" key="GridCell.Tab.0.left" timestamp="1593740309154">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="202" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593728063232" />
-    <state width="1023" height="169" key="GridCell.Tab.0.left/0.25.1366.743@0.25.1366.743" timestamp="1593739338357" />
-    <state width="1023" height="169" key="GridCell.Tab.0.right" timestamp="1593739338358">
+    <state width="1318" height="169" key="GridCell.Tab.0.left/0.25.1366.743@0.25.1366.743" timestamp="1593740309154" />
+    <state width="1318" height="169" key="GridCell.Tab.0.right" timestamp="1593740309156">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="202" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593728063233" />
-    <state width="1023" height="169" key="GridCell.Tab.0.right/0.25.1366.743@0.25.1366.743" timestamp="1593739338358" />
+    <state width="1318" height="169" key="GridCell.Tab.0.right/0.25.1366.743@0.25.1366.743" timestamp="1593740309156" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1593540331461">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
