@@ -13,6 +13,8 @@ public class HomeController extends FXController {
     @FXML
     private JFXButton addplanBtn;
 
+    public void handleProductList(){this.mainApp.showProductList();}
+
     public void handleDemanda(){
         this.mainApp.showDemand();
     }

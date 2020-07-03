@@ -30,10 +30,14 @@ public class JFXValidators {
      */
     public static void addNumberValidator(JFXTextField field){
         NumberValidator val = new NumberValidator();
-        field.getValidators().add(val);
         val.setMessage("Solo números");
+        field.getValidators().add(val);
         field.addEventFilter(KeyEvent.KEY_TYPED, (KeyEvent evt) -> {
             if(!field.validate()){
+                evt.consume();
+            }
+            // no permitir números muy largos
+            if(field.getText().length()>20){
                 evt.consume();
             }
         });

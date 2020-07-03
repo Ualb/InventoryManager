@@ -208,8 +208,8 @@ public class DemandController extends FXController implements Initializable {
 
         xAxis.setAutoRanging(false);
         xAxis.setLowerBound(0);
-        xAxis.setUpperBound(250);
-        xAxis.setTickUnit(25);
+        xAxis.setUpperBound(100);
+        xAxis.setTickUnit(10);
         xAxis.setLabel("Tiempo (días)");
 
         yAxis.setAutoRanging(false);

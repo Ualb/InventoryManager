@@ -1,38 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.251" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inv.mgr.views.HomeController">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inv.mgr.views.HomeController">
    <children>
       <BorderPane layoutX="191.0" layoutY="71.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <Label alignment="CENTER" text="Administracion de inventario" BorderPane.alignment="CENTER" />
+            <Label alignment="CENTER" text="Administracion de inventario" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding></Label>
          </top>
          <center>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
+            <GridPane alignment="CENTER" hgap="20.0" vgap="20.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <JFXButton fx:id="demandaBtn" buttonType="RAISED" onAction="#handleDemanda" prefHeight="33.0" prefWidth="350.0" style="-fx-background-color: #1e3888ff;" text="Función Pronostico de demanda" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" onAction="#handleProductList" prefHeight="194.0" prefWidth="250.0" style="-fx-background-color: #1e3888ff;" text="Ver Productos" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.halignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="mrpBtn" buttonType="RAISED" onAction="#handleMRP" prefHeight="33.0" prefWidth="350.0" style="-fx-background-color: #1e3888ff;" text="Función MRP" textFill="WHITE">
+                  <JFXButton fx:id="demandaBtn" buttonType="RAISED" onAction="#handleDemanda" prefHeight="173.0" prefWidth="250.0" style="-fx-background-color: #1e3888ff;" text="Función Pronostico de demanda" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="addplanBtn" onAction="#handleAP" buttonType="RAISED" prefHeight="33.0" prefWidth="350.0" style="-fx-background-color: #1e3888ff;" text="Función Plan Agregado" textFill="WHITE">
+                  <JFXButton fx:id="mrpBtn" buttonType="RAISED" onAction="#handleMRP" prefHeight="195.0" prefWidth="250.0" style="-fx-background-color: #1e3888ff;" text="Función MRP" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="addplanBtn" buttonType="RAISED" onAction="#handleAP" prefHeight="196.0" prefWidth="250.0" style="-fx-background-color: #1e3888ff;" text="Función Plan Agregado" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </JFXButton>
                </children>
-            </VBox>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </GridPane>
          </center>
       </BorderPane>
    </children>

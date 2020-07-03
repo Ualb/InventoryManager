@@ -68,6 +68,10 @@ public class MainApp extends Application {
         refreshPrimaryStage("views/fxml/AggregatePlan.fxml");
     }
 
+    public void showProductList(){
+        refreshPrimaryStage("views/fxml/ProductList.fxml");
+    }
+
     /**
      * Loads a scene into center of parent pane for MRP tables
      * @param parent parent panel

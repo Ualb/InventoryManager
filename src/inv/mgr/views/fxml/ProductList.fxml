@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inv.mgr.views.ProductListController">
+   <children>
+      <BorderPane layoutX="175.0" layoutY="93.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton buttonType="RAISED" onAction="#handleBack" style="-fx-background-color: #1e3888;" text="&lt;- Atras" textFill="WHITE" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <TableView fx:id="mainTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="nombreCol" prefWidth="75.0" text="Nombre" />
+                <TableColumn fx:id="costoCol" prefWidth="75.0" text="Costo" />
+                  <TableColumn fx:id="secstockCol" prefWidth="75.0" text="Stock de seguridad" />
+                  <TableColumn fx:id="chCol" prefWidth="75.0" text="Costo de mantenimiento" />
+                  <TableColumn fx:id="clCol" prefWidth="75.0" text="Costo de faltante" />
+                  <TableColumn fx:id="csCol" prefWidth="75.0" text="Costo de sobrante" />
+                  <TableColumn fx:id="demtyoeCol" prefWidth="75.0" text="Tipo de demanda" />
+                  <TableColumn fx:id="prodtypeCol" prefWidth="75.0" text="Tipo de producto" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -21,33 +21,25 @@
   <component name="ChangeListManager">
     <list default="true" id="c6fa75f6-263d-4e98-9c5b-4ad313f7e06e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inv/mgr/model/dao/impl/DemandaIDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/model/dao/impl/DemandaIDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inv/mgr/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inv/mgr/utils/viewsutils/JFXValidators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/utils/viewsutils/JFXValidators.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/AggregatePlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/AggregatePlanController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/DemandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/DemandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/fxml/AggregatePlan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/fxml/AggregatePlan.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/model/dao/impl/DemandaIDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/model/dao/impl/DemandaIDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inv/mgr/views/fxml/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/inv/mgr/views/fxml/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/MainApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/utils/viewsutils/JFXValidators.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/utils/viewsutils/JFXValidators.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/AggregatePlanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/AggregatePlanController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/DemandController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/DemandController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/HomeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/AggregatePlan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/AggregatePlan.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inv/mgr/views/fxml/Home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -129,29 +121,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <option name="contentProportion" value="0.18238021" />
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:jdbc:mariadb://u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/xtf0qnoava02o4qj" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:jdbc:mariadb://u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/xtf0qnoava02o4qj" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@77be83e2" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -183,13 +152,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="30" key="#Assign_Data_Sources" timestamp="1593542304033">
@@ -201,10 +169,10 @@
     </state>
     <state x="137" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1592878057298" />
     <state x="137" y="51" width="930" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1366.743@0.25.1366.743" timestamp="1593152010495" />
-    <state x="491" y="103" width="374" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1593645996922">
+    <state x="491" y="103" width="374" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1593738126995">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="491" y="103" width="374" height="587" key="#com.intellij.ide.util.MemberChooser/0.25.1366.743@0.25.1366.743" timestamp="1593645996922" />
+    <state x="491" y="103" width="374" height="587" key="#com.intellij.ide.util.MemberChooser/0.25.1366.743@0.25.1366.743" timestamp="1593738126995" />
     <state x="495" y="133" width="524" height="445" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1593150708989">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
@@ -242,26 +210,26 @@
     </state>
     <state x="463" y="126" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592880896141" />
     <state x="463" y="152" width="424" height="484" key="FileChooserDialogImpl/0.25.1366.743@0.25.1366.743" timestamp="1593151893216" />
-    <state width="1323" height="202" key="GridCell.Tab.0.bottom" timestamp="1593728063233">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1023" height="169" key="GridCell.Tab.0.bottom" timestamp="1593739338358">
+      <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="202" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593728063233" />
-    <state width="1318" height="169" key="GridCell.Tab.0.bottom/0.25.1366.743@0.25.1366.743" timestamp="1593651039001" />
-    <state width="1323" height="202" key="GridCell.Tab.0.center" timestamp="1593728063233">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1023" height="169" key="GridCell.Tab.0.bottom/0.25.1366.743@0.25.1366.743" timestamp="1593739338358" />
+    <state width="1023" height="169" key="GridCell.Tab.0.center" timestamp="1593739338358">
+      <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="202" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593728063233" />
-    <state width="1318" height="169" key="GridCell.Tab.0.center/0.25.1366.743@0.25.1366.743" timestamp="1593651039000" />
-    <state width="1323" height="202" key="GridCell.Tab.0.left" timestamp="1593728063232">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1023" height="169" key="GridCell.Tab.0.center/0.25.1366.743@0.25.1366.743" timestamp="1593739338358" />
+    <state width="1023" height="169" key="GridCell.Tab.0.left" timestamp="1593739338357">
+      <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="202" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593728063232" />
-    <state width="1318" height="169" key="GridCell.Tab.0.left/0.25.1366.743@0.25.1366.743" timestamp="1593651039000" />
-    <state width="1323" height="202" key="GridCell.Tab.0.right" timestamp="1593728063233">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1023" height="169" key="GridCell.Tab.0.left/0.25.1366.743@0.25.1366.743" timestamp="1593739338357" />
+    <state width="1023" height="169" key="GridCell.Tab.0.right" timestamp="1593739338358">
+      <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1323" height="202" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593728063233" />
-    <state width="1318" height="169" key="GridCell.Tab.0.right/0.25.1366.743@0.25.1366.743" timestamp="1593651039000" />
+    <state width="1023" height="169" key="GridCell.Tab.0.right/0.25.1366.743@0.25.1366.743" timestamp="1593739338358" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1593540331461">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -274,6 +242,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="391" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1593718234074" />
+    <state x="0" y="25" width="607" height="743" key="find.popup" timestamp="1593737898065">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="0" y="25" width="607" height="743" key="find.popup/0.25.1366.743@0.25.1366.743" timestamp="1593737898065" />
     <state x="347" y="175" key="run.anything.popup" timestamp="1593650123307">
       <screen x="0" y="25" width="1366" height="743" />
     </state>

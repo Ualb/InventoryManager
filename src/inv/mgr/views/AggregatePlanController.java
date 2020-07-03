@@ -9,6 +9,7 @@ import inv.mgr.model.entities.ProductoEntity;
 import inv.mgr.utils.productioncalcs.AggregatePlanning;
 import inv.mgr.utils.productionutils.MonthAggregatePlanning;
 import inv.mgr.utils.productionutils.PlainAggregatePlanning;
+import inv.mgr.utils.viewsutils.Alerts;
 import inv.mgr.utils.viewsutils.JFXValidators;
 import inv.mgr.utils.viewsutils.stringconverters.ProductoConverter;
 import javafx.collections.FXCollections;
@@ -20,6 +21,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.net.URL;
 import java.util.*;
 
@@ -102,7 +105,11 @@ public class AggregatePlanController extends FXController implements Initializab
             productCmb.setItems(prods);
             productCmb.setConverter(new ProductoConverter());
         } catch (Exception e) {
-            e.printStackTrace();
+            //Forma de imprimir excepciones usando el alert
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            e.printStackTrace(pw);
+            Alerts.exceptionAlert(e.getMessage(), sw.toString());
         }
 
         number.setCellValueFactory(new PropertyValueFactory<>("number"));
